@@ -1,0 +1,3 @@
+<view>
+<image class="toptheme" src="{{topThemeImg.entrance_img}}"></image>
+</view>

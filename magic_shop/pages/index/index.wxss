@@ -1,0 +1,5 @@
+/**index.wxss**/
+.toptheme{
+  height: 260rpx;
+  width: 100%;
+}
