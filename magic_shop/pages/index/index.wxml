@@ -1,3 +1,12 @@
 <view>
 <image class="toptheme" src="{{topThemeImg.entrance_img}}"></image>
+<swiper class="swiper" circular="{{true}}" indicator-active-color="#157658" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}">
+  <block wx:for="{{banner.items}}" wx:key="{{index}}" :key="{{index}}">
+    <swiper-item>
+      <image class="swiper" src="{{item.img}}" />
+    </swiper-item>
+  </block>
+</swiper>
+<H-grid grid="{{grid}}"></H-grid>
+<image class="activity" src="{{activity.entrance_img}}" />
 </view>

@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "H-grid":"/components/grid/index"
+  }
 }

@@ -1,32 +1,47 @@
-import {Theme} from '../../model/theme'
+import { Theme } from '../../model/theme'
+import { Category } from '../../model/category'
+import { Banner } from '../../model/banner'
+import { Activity } from '../../model/activity'
 Page({
   data: {
-    topThemeImg:null
+    topThemeImg: null,
+    banner: null,
+    grid: [],
+    activity: null,
+    themeB: null,
   },
-  onLoad: async function() {
-    const data = await Theme.getHomeLoactionA()
+  onLoad: async function () {
+    this.getAllData()
+  },
+  async getAllData() {
+    const theme = new Theme()
+    await theme.getHomeThemes()
+    const themeA = await theme.getThemeA()
+    const themeB = await theme.getThemeB()
+    const grid = await Category.getHomeCategory()
+    const banner = await Banner.getHomeBanner()
+    const activity = await Activity.getLocationD()
     this.setData({
-      topThemeImg:data.data[0]
+      topThemeImg: themeA,
+      grid,
+      banner,
+      activity,
+      themeB,
     })
   },
-  onReady: function() {
+  onReady: function () {
     //Do some when page ready.
-    
   },
-  onShow: function() {
+  onShow: function () {
     //Do some when page show.
-    
   },
-  onHide: function() {
+  onHide: function () {
     //Do some when page hide.
-    
   },
-  onUnload: function() {
+  onUnload: function () {
     //Do some when page unload.
-    
   },
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     //Do some when page pull down.
-    
-  }
+  },
 })
