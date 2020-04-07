@@ -1,0 +1,50 @@
+@import '../../assets/hover';
+.container{
+  box-sizing: border-box;
+  padding: 42rpx 0 22rpx 28rpx;
+  margin-top: 20rpx;
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+  height: 436rpx;
+}
+.title-img{
+  width: 690rpx;
+  height: 88rpx;
+}
+.inner{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+  height: 294rpx;
+}
+.item{
+  display: flex;
+  width: 160rpx;
+  flex-direction: column;
+  margin-right: 60rpx;
+  align-items: center;
+}
+.img{
+  width: 160rpx;
+  height: 160rpx;
+}
+.desc{
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.title{
+  font-size: 20rpx;
+  max-width: 130rpx;
+  color:#666666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.price{
+  font-size: 24rpx;
+  margin-top: 14rpx;
+}
+

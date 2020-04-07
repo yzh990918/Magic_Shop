@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="hot">
+    <image class="top-img" src="{{hotlist.img}}" />
+  </view>
+  <view class="img-container">
+    <view class="left" hover-class="react-hover" hover-stay-time="500">
+      <image class="left-img" src="{{hotlist.items[0].img}}" />
+    </view>
+    <view class="right">
+      <view hover-class="react-hover" hover-stay-time="500">
+        <image class="right-top" src="{{hotlist.items[1].img}}" />
+      </view>
+      <view hover-class="react-hover" hover-stay-time="500">
+        <image class="right-bottom" src="{{hotlist.items[2].img}}" />
+      </view>
+    </view>
+  </view>
+</view>

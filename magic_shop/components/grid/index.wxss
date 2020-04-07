@@ -1,4 +1,5 @@
 /* components/grid/index.wxss */
+@import '../../assets/hover';
 .container{
   width: 100%;
   height: 320rpx;

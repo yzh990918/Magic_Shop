@@ -9,6 +9,8 @@ Page({
     grid: [],
     activity: null,
     themeB: null,
+    themeC:null,
+    themeD:null
   },
   onLoad: async function () {
     this.getAllData()
@@ -16,10 +18,23 @@ Page({
   async getAllData() {
     const theme = new Theme()
     await theme.getHomeThemes()
+    // 获取 三个主题入口
     const themeA = await theme.getThemeA()
     const themeB = await theme.getThemeB()
+    const themeC = await theme.getThemeC()
+    const themeD = await theme.getThemeD()
+    // 获取B主题的spu
+    let ThemeBSpuList = []
+    if(themeB.online){
+     let data =await Theme.getHomeLocationESpu()
+      ThemeBSpuList = data.spu_list.slice(0,8)
+    }
+    // 获取六宫格
     const grid = await Category.getHomeCategory()
-    const banner = await Banner.getHomeBanner()
+    // 获取轮播
+    const banner = await Banner.getHomeBannerTop()
+    const hotList = await Banner.getHomeBannerMiddle()
+    // 获取活动
     const activity = await Activity.getLocationD()
     this.setData({
       topThemeImg: themeA,
@@ -27,6 +42,10 @@ Page({
       banner,
       activity,
       themeB,
+      ThemeBSpuList,
+      themeC,
+      hotList,
+      themeD
     })
   },
   onReady: function () {

@@ -4,6 +4,8 @@
     <l-grid-item key="{{index}}" slot="{{index}}">
     <view 
     class="grid-item"
+    hover-class="react-hover"
+    hover-stay-time="500"
     >
     <image class="image" src="{{item.img}}" />
     <text class="text" >{{item.title}}</text>

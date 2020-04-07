@@ -1,35 +1,46 @@
-import {Http} from '../utils/http'
+import { Http } from '../utils/http'
 class Theme {
-  static ThemeA ='t-1'
+  static ThemeA = 't-1'
   static ThemeB = 't-2'
   static ThemeC = 't-3'
   static ThemeD = 't-4'
   // 用类对象存储数据 改写方法  避免请求多次服务
   themes = []
-    async getHomeThemes(){
+  async getHomeThemes() {
     const res = await Http.request({
-      url:'/theme/by/names',
-      data:{
-        names:`${Theme.ThemeA},${Theme.ThemeB},${Theme.ThemeC},${Theme.ThemeD}`
-      }
+      url: '/theme/by/names',
+      data: {
+        names: `${Theme.ThemeA},${Theme.ThemeB},${Theme.ThemeC},${Theme.ThemeD}`,
+      },
     })
-    this.themes =res.data
+    this.themes = res.data
   }
   // 直接获取locationA LocationB 保证调用方的请求代码简洁
-  async getThemeA(){
-    return this.themes.find(t=>t.name===Theme.ThemeA)
+  async getThemeA() {
+    return this.themes.find((t) => t.name === Theme.ThemeA)
   }
-  async getThemeB(){
-    return this.themes.find(t=>t.name===Theme.ThemeB)
+  async getThemeB() {
+    return this.themes.find((t) => t.name === Theme.ThemeB)
   }
-  async getThemeC(){
-    return this.themes.find(t=>t.name===Theme.ThemeC)
+  async getThemeC() {
+    return this.themes.find((t) => t.name === Theme.ThemeC)
   }
-  async getThemeD(){
-    return this.themes.find(t=>t.name===Theme.ThemeD)
+  async getThemeD() {
+    return this.themes.find((t) => t.name === Theme.ThemeD)
+  }
+  static getHomeLocationESpu() {
+    return Theme.getThemeSpuByName(Theme.ThemeB)
+  }
+
+  static getHomeThemeCSpu(){
+    return Theme.getThemeSpuByName(Theme.ThemeC)
+  }
+  static async getThemeSpuByName(name) {
+    const res =await Http.request({
+      url: `/theme/name/${name}/with_spu`,
+    })
+    return res.data
   }
 }
 
-export{
-  Theme
-}
+export { Theme }

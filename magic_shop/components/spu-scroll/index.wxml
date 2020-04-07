@@ -1,0 +1,16 @@
+<view class="container">
+  <image class="title-img" src="{{theme.title_img}}"></image>
+  <scroll-view scroll-x="{{true}}">
+    <view class="inner">
+      <block wx:for="{{spuList}}" wx:key="{{index}}">
+        <view class="item" hover-class="react-hover" hover-stay-time="500">
+          <image class="img" src="{{item.img}}" />
+          <view class="desc">
+            <view class="title">{{item.title}}</view>
+            <l-price color="#157658" l-class="price" value="{{item.price}}"></l-price>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

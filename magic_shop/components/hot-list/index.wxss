@@ -1,0 +1,44 @@
+/* components/hot-list/index.wxss */
+@import '../../assets/hover';
+.container{
+  margin-top: 20rpx;
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+}
+.hot{
+  box-sizing: border-box;
+  padding: 44rpx 30rpx 30rpx 30rpx;
+}
+.top-img{
+  width: 690rpx;
+  height: 88rpx;
+}
+.img-container{
+  display: flex;
+  flex-direction: row;
+}
+.left{
+  flex: 0 0 344rpx;
+  width: 344rpx;
+  margin-right: 6rpx;
+}
+.left-img{
+  width: 344rpx;
+  height: 526rpx;
+}
+.right{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.right-top{
+  display: flex;
+  width: 400rpx;
+  height: 260rpx;
+  margin-bottom: 6rpx;
+}
+.right-bottom{
+  display: flex;
+  width: 400rpx;
+  height: 260rpx;
+}

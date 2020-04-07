@@ -14,3 +14,13 @@
   width: 100%;
   height: 310rpx;
 }
+.themeC{
+  display: flex;
+  width: 100%;
+  height: 880rpx;
+}
+.themeD{
+  display: flex;
+  width: 100%;
+  height: 840rpx;
+}

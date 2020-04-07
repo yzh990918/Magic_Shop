@@ -1,0 +1,17 @@
+/* components/water-fall/index.wxss */
+
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  align-items: center;
+  background-color: #ffffff;
+}
+.top{
+  box-sizing: border-box;
+  padding: 36rpx 30rpx 36rpx 30rpx;
+}
+.top-img{
+  width: 690rpx;
+  height: 68rpx;
+}
