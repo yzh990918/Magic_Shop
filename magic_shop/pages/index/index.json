@@ -2,7 +2,6 @@
   "usingComponents": {
     "H-grid":"/components/grid/index",
     "H-scroll":"/components/spu-scroll/index",
-    "H-hot-list":"/components/hot-list/index",
-    "H-recommend-list":"/components/water-fall/index"
+    "H-hot-list":"/components/hot-list/index"
   }
 }

@@ -1,0 +1,21 @@
+
+function mainPrice(price,discountpirce){
+  // 如果有折扣 划线的是主价格
+  if(!discountpirce){
+    return price
+  }else{
+    return discountpirce
+  }
+}
+function slashPrice(price,discountpirce){
+  if(discountpirce){
+    return price
+  }else{
+    return 
+  }
+}
+// 不能简写
+module.exports = {
+  mainPrice:mainPrice,
+  slashPrice:slashPrice
+};

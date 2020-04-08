@@ -1,0 +1,58 @@
+/* components/spu-list/index.wxss */
+@import '../../assets/hover';
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 340rpx;
+  background-color: #ffffff;
+  margin-bottom: 30rpx;
+  box-shadow: 0px 0px 8px 0px rgba(119, 163, 149, 0.2);
+}
+.spu-img{
+  width: 340rpx;
+  height: 360rpx;
+}
+
+.desc{
+  display: flex;
+  flex-direction: column;
+  padding: 18rpx 10rpx 30rpx 10rpx;
+}
+.title{
+  color:#333333;
+  font-size: 28rpx;
+  line-height: 36rpx;
+}
+.tags-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 8rpx;
+  margin-top: 6rpx;
+}
+.tags{
+  background-color: #DCEBE6 !important;
+  height:36rpx!important;
+  color:#157658!important;
+  padding-left: 6rpx !important;
+  padding-right: 6rpx !important;
+  margin-right: 5rpx !important;
+}
+.pirce-container{
+  display: flex;
+}
+.price{
+  margin-top: 8rpx!important;
+  font-size: 32rpx!important;
+}
+.info{
+  font-size: 24rpx;
+  color: #888;
+  font-weight: 300;
+  margin-top: 6rpx;
+}
+.discount-pirce{
+  margin-top: 12rpx!important;
+  margin-left: 20rpx!important;
+  font-size: 22rpx!important;
+}

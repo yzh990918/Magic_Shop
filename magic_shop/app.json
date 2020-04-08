@@ -3,13 +3,12 @@
     "pages/index/index",
     "pages/my/index",
     "pages/cart/index",
-    "pages/category/index",
-    "components/water-fall/index"
+    "pages/category/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "风袖",
+    "navigationBarTitleText": "墨痕",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
@@ -17,7 +16,11 @@
   "usingComponents": {
     "l-grid": "/miniprogram_npm/lin-ui/grid/index",
     "l-grid-item": "/miniprogram_npm/lin-ui/grid-item/index",
-    "l-price": "/miniprogram_npm/lin-ui/price/index"
+    "l-price": "/miniprogram_npm/lin-ui/price/index",
+    "l-water-flow": "/miniprogram_npm/lin-ui/water-flow/index",
+    "s-spu-waterflow":"/components/spu-list/index",
+    "l-tag":"/miniprogram_npm/lin-ui/tag/index",
+    "l-loadmore":"/miniprogram_npm/lin-ui/loadmore/index"
   },
   "tabBar": {
     "borderStyle": "black",

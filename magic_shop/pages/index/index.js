@@ -2,6 +2,7 @@ import { Theme } from '../../model/theme'
 import { Category } from '../../model/category'
 import { Banner } from '../../model/banner'
 import { Activity } from '../../model/activity'
+import { SpuPaging } from '../../model/Spu-paging'
 Page({
   data: {
     topThemeImg: null,
@@ -9,11 +10,24 @@ Page({
     grid: [],
     activity: null,
     themeB: null,
-    themeC:null,
-    themeD:null
+    themeC: null,
+    themeD: null,
+    //保存之前的spuPaging对象
+    SPaging: null,
+    LoadingType: 'loading',
   },
   onLoad: async function () {
     this.getAllData()
+    this.initBottomSpulist()
+  },
+  async initBottomSpulist() {
+    const Paging = SpuPaging.getLatestPaging()
+    this.data.SPaging = Paging
+    const data = await Paging.getMoreData()
+    if (!data) {
+      return
+    }
+    wx.lin.renderWaterFlow(data.items)
   },
   async getAllData() {
     const theme = new Theme()
@@ -25,9 +39,9 @@ Page({
     const themeD = await theme.getThemeD()
     // 获取B主题的spu
     let ThemeBSpuList = []
-    if(themeB.online){
-     let data =await Theme.getHomeLocationESpu()
-      ThemeBSpuList = data.spu_list.slice(0,8)
+    if (themeB.online) {
+      let data = await Theme.getHomeLocationESpu()
+      ThemeBSpuList = data.spu_list.slice(0, 8)
     }
     // 获取六宫格
     const grid = await Category.getHomeCategory()
@@ -45,7 +59,7 @@ Page({
       ThemeBSpuList,
       themeC,
       hotList,
-      themeD
+      themeD,
     })
   },
   onReady: function () {
@@ -56,6 +70,19 @@ Page({
   },
   onHide: function () {
     //Do some when page hide.
+  },
+  async onReachBottom() {
+    const data = await this.data.SPaging.getMoreData()
+    // 如果没数据了 type=end
+    if (!data) {
+      return
+    }
+    wx.lin.renderWaterFlow(data.items)
+    if (!data.moreData) {
+      this.setData({
+        LoadingType: 'end',
+      })
+    }
   },
   onUnload: function () {
     //Do some when page unload.

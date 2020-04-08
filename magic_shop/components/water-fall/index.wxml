@@ -1,6 +1,0 @@
-<view class="container">
-  <view class="top">
-    <image class="top-img" src="../../imgs/home/title@interest.png"></image>
-  </view>
-  <view class="list"></view>
-</view>

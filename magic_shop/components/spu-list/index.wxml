@@ -1,0 +1,19 @@
+
+<wxs src="../../wxs/price.wxs" module="p"></wxs>
+<view class="container" hover-class="react-hover" hover-stay-time="500">
+  <image mode="widthFix" class="spu-img" src="{{data.img}}" />
+  <view class="desc">
+    <view class="title">{{data.title}}</view>
+    <view class="tags-container">
+      <block wx:if="{{tags.length}}" wx:for="{{tags}}" wx:key="{{index}}">
+        <l-tag size="super-mini" l-class="tags">{{item}}</l-tag>
+      </block>
+    </view>
+    <view class="pirce-container">
+       <l-price l-class="price" color="#157658" value="{{p.mainPrice(data.price,data.discount_price)}}"></l-price>
+    <l-price wx:if="{{data.discount_price}}" deleted l-class="discount-pirce"color="#888" 
+    value="{{p.slashPrice(data.price,data.discount_price)}}" ></l-price>
+    </view>
+    <view class="info">{{data.subtitle}}</view>
+  </view>
+</view>
