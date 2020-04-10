@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="blurb">
+    <image src="" />
+  </view>
+  <view class="fence">
+    <block wx:for="{{}}">
+      <s-fence></s-fence>
+    </block>
+  </view>
+  <view class="counter"></view>
+</view>

@@ -1,6 +1,6 @@
 
 <wxs src="../../wxs/price.wxs" module="p"></wxs>
-<view class="container" hover-class="react-hover" hover-stay-time="500">
+<view data-pid="{{data.id}}" bind:tap="toSpuDetail" class="container" hover-class="react-hover" hover-stay-time="500">
   <image mode="widthFix" class="spu-img" src="{{data.img}}" />
   <view class="desc">
     <view class="title">{{data.title}}</view>

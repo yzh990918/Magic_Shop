@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "s-relam":"/components/realm/index"
+  }
+}

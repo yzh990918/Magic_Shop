@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/my/index",
     "pages/cart/index",
-    "pages/category/index"
+    "pages/category/index",
+    "pages/detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -18,9 +19,9 @@
     "l-grid-item": "/miniprogram_npm/lin-ui/grid-item/index",
     "l-price": "/miniprogram_npm/lin-ui/price/index",
     "l-water-flow": "/miniprogram_npm/lin-ui/water-flow/index",
-    "s-spu-waterflow":"/components/spu-list/index",
-    "l-tag":"/miniprogram_npm/lin-ui/tag/index",
-    "l-loadmore":"/miniprogram_npm/lin-ui/loadmore/index"
+    "s-spu-waterflow": "/components/spu-list/index",
+    "l-tag": "/miniprogram_npm/lin-ui/tag/index",
+    "l-loadmore": "/miniprogram_npm/lin-ui/loadmore/index"
   },
   "tabBar": {
     "borderStyle": "black",

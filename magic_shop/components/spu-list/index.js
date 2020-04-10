@@ -31,5 +31,12 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {},
+  methods: {
+    toSpuDetail(e){
+      const pid = e.currentTarget.dataset.pid
+      wx.navigateTo({
+        url: `/pages/detail/index?pid=${pid}`
+      })
+    }
+  },
 })
