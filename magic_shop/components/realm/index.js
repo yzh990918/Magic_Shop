@@ -1,10 +1,22 @@
 // components/relame/index.js
+import {FenceGroup} from '../models/fence-group';
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
     spu:Object
+  },
+  observers:{
+    'spu':function(spu){
+      if(!spu){
+        return
+      }
+      const fenceGroup = new FenceGroup(spu)
+      fenceGroup.initFence()
+      this.getFences(fenceGroup)
+    }
+    
   },
 
   /**
@@ -18,6 +30,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    getFences(fenceGroup){
+      this.setData({
+        fences:fenceGroup.fences
+      })
+    }
 
   }
 })

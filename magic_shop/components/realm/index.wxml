@@ -3,8 +3,8 @@
     <image src="" />
   </view>
   <view class="fence">
-    <block wx:for="{{}}">
-      <s-fence></s-fence>
+    <block wx:for="{{fences}}" wx:key="{{index}}">
+      <s-fence fence="{{item}}"></s-fence>
     </block>
   </view>
   <view class="counter"></view>

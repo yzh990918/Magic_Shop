@@ -1,1 +1,6 @@
 /* components/relame/index.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+}
