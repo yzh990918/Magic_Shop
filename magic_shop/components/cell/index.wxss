@@ -1,13 +1,31 @@
 /* components/cell/index.wxss */
 .container{
   border: 1px solid #333333;
-  background-color: #ffffff;
+  padding: 2rpx;
+  color: #333333;
+  box-sizing: border-box;
+  height: 60rpx;
 }
 .inner{
+  height: 100%;
   display: flex;
   align-items: center;
-  height: 60rpx;
+  background-color: #ffffff;
   padding: 0 15rpx;
   font-size: 24rpx;
-  color: #333333
+}
+.text{
+  display: inline-block;
+}
+.forbidden{
+  border: 2rpx dashed #bbbbbb;
+  color: #bbbbbb!important;
+}
+
+.selected{
+  border: 2rpx solid #157658!important;
+  color: #ffffff!important;
+}
+.s-inner{
+  background-color: #157658!important;
 }

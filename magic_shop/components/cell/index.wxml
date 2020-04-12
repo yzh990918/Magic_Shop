@@ -1,5 +1,7 @@
-<view class="container">
-  <view class="inner">
+<wxs src="../../wxs/status.wxs" module="c"></wxs>
+<view bind:tap="selectCell" class="container {{c.statusStyle(Cell.status).outer}}">
+  <view class="inner {{c.statusStyle(Cell.status).inner}}">
     <text class="text">{{Cell.title}}</text>
   </view>
 </view>
+

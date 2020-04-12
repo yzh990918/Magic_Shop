@@ -18,6 +18,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    selectCell(event){
+      this.triggerEvent('SelectCell',{})
+    }
   }
 })

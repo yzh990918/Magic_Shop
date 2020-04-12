@@ -1,0 +1,19 @@
+function statusStyle(status){
+  if(status ==='forbidden' ){
+    return {
+      outer:'forbidden',
+      inner:''
+    }
+  }
+  if(status === 'selected'){
+    return{
+      outer:'selected',
+      inner:'s-inner'
+    }
+  }
+}
+
+module.exports = {
+  statusStyle:statusStyle
+};
+

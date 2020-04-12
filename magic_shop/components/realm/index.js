@@ -1,5 +1,6 @@
 // components/relame/index.js
 import {FenceGroup} from '../models/fence-group';
+import { judger } from '../models/judger';
 Component({
   /**
    * 组件的属性列表
@@ -15,6 +16,7 @@ Component({
       const fenceGroup = new FenceGroup(spu)
       fenceGroup.initFence()
       this.getFences(fenceGroup)
+      const Judger = new judger(fenceGroup)
     }
     
   },

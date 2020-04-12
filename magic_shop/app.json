@@ -21,7 +21,8 @@
     "l-water-flow": "/miniprogram_npm/lin-ui/water-flow/index",
     "s-spu-waterflow": "/components/spu-list/index",
     "l-tag": "/miniprogram_npm/lin-ui/tag/index",
-    "l-loadmore": "/miniprogram_npm/lin-ui/loadmore/index"
+    "l-loadmore": "/miniprogram_npm/lin-ui/loadmore/index",
+    "l-textarea":"/miniprogram_npm/lin-ui/textarea/index"
   },
   "tabBar": {
     "borderStyle": "black",
