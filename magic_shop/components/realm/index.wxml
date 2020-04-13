@@ -4,7 +4,7 @@
   </view>
   <view class="fence">
     <block wx:for="{{fences}}" wx:key="{{index}}">
-      <s-fence fence="{{item}}"></s-fence>
+      <s-fence x="{{index}}" bind:cellTap="oncellTap" fence="{{item}}"></s-fence>
     </block>
   </view>
   <view class="counter"></view>

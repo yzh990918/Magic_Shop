@@ -4,7 +4,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    Cell:Object
+    Cell:Object,
+    x:Number,
+    y:Number
   },
 
   /**
@@ -18,8 +20,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    selectCell(event){
-      this.triggerEvent('SelectCell',{})
+    selectCell(){
+      // 越组件传递事件
+      this.triggerEvent('cellTap',{cell:this.properties.Cell,x:this.properties.x,y:this.properties.y},{bubbles:true,composed:true})
     }
   }
 })

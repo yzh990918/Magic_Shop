@@ -4,7 +4,7 @@ class Cell{
   id
   status = CellStatus.WAITING
   constructor(spec) {
-    // 赋值给Cell的title
+    // 设置属性
     this.title = spec.value
     this.id = spec.value_id
   }
