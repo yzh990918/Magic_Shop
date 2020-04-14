@@ -1,6 +1,7 @@
 // components/relame/index.js
 import {FenceGroup} from '../models/fence-group';
 import { judger } from '../models/judger';
+import { Cell } from '../models/cell';
 Component({
   /**
    * 组件的属性列表
@@ -40,9 +41,13 @@ Component({
       })
     },
     oncellTap(e){
-      const cell = e.detail.cell
+      const data = e.detail.cell
       const x =e.detail.x
       const y =e.detail.y
+      const cell = new Cell(data.spec)
+      cell.status = data.status
+
+
       const judger = this.data.judger
       judger.judge(cell,x,y)
       this.setData({

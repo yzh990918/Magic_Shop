@@ -53,5 +53,14 @@ class FenceGroup {
     this.fences = fences
     console.log(fences);
   }
+  // 遍历所有的cell
+  eachCell(cb){
+    for(let i =0;i<this.fences.length;i++){
+      for(let j = 0; j<this.fences[i].Cells.length;j++){
+        const cell = this.fences[i].Cells[j]
+        cb(cell,i,j)
+      }
+    }
+  }
 }
 export { FenceGroup }
