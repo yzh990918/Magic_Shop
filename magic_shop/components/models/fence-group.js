@@ -51,7 +51,6 @@ class FenceGroup {
       fences.push(fence)
     })
     this.fences = fences
-    console.log(fences);
   }
   // 遍历所有的cell
   eachCell(cb){
@@ -61,6 +60,23 @@ class FenceGroup {
         cb(cell,i,j)
       }
     }
+  }
+  // 拿到默认的sku
+  getDefaultSku(){
+    const defaultID = this.spu.default_sku_id
+    const result = this.skuList.find(s=>{
+      return s.id === defaultID
+    })
+    return result
+  }
+  // 传入cell,status就可以改变cell的状态为status
+  setCellStatusById(cellId,status){
+    // 找到符合条件的cell
+    this.eachCell((cell)=>{
+      if(cell.id === cellId){
+        cell.status = status
+      }
+    })
   }
 }
 export { FenceGroup }

@@ -1,7 +1,29 @@
+<wxs src="../../wxs/price.wxs" module="p"></wxs>
 <view class="container">
   <view class="blurb">
-    <image src="" />
+    <view class="img-wrapper">
+      <image class="img" src="{{img}}" />
+    </view>
+    <view class="info">
+      <view class="title">{{title}}</view>
+      <view class="desc">
+        <view class="top">
+          <view class="price-wrapper">
+            <l-price unit-size="32" size="32" color="#157658" value="{{p.mainPrice(price,discountPrice)}}"></l-price>
+            <l-price wx:if="{{discountPrice}}" deleted l-class="discount-pirce" color="#888" unit-size="22" size="22" value="{{p.slashPrice(price,discountPrice)}}"></l-price>
+          </view>
+          <view wx:if="{{stock && stock < 10 && stock > 0}}" class="stock-pinch">
+            仅剩:  {{stock}} 件
+          </view>
+          <view wx:if="{{stock && stock > 10}}" class="stock">库存:  {{stock}} 件</view>
+        </view>
+        <view class="select">
+          请选择
+        </view>
+      </view>
+    </view>
   </view>
+  <view class="hr"></view>
   <view class="fence">
     <block wx:for="{{fences}}" wx:key="{{index}}">
       <s-fence x="{{index}}" bind:cellTap="oncellTap" fence="{{item}}"></s-fence>
