@@ -12,17 +12,18 @@ class judger {
     this._initpathDirt()
     this._initSkuPending()
   }
+
   // 初始化默认选中的sku
   _initSkuPending() {
-    this.SkuPending = new SkuPending()
+    this.SkuPending = new SkuPending(this.fenceGroup.fences.length)
     // 获取默认的sku 然后插入pending
     const defaultSku = this.fenceGroup.getDefaultSku()
-    if(!defaultSku){
+    if (!defaultSku) {
       return
     }
     this.SkuPending.init(defaultSku)
     this._setdefaultSkuStatus()
-    this.judge(null,null,null,true)
+    this.judge(null, null, null, true)
   }
   // 返回所有的字典的路径
   _initpathDirt() {
@@ -32,24 +33,24 @@ class judger {
     })
   }
   // 初始化已选中的cell状态
-  _setdefaultSkuStatus(){
-    this.SkuPending.pending.forEach(cell=>{
-      this.fenceGroup.eachCell(((c)=>{
-        if(c.id === cell.id){
+  _setdefaultSkuStatus() {
+    this.SkuPending.pending.forEach((cell) => {
+      this.fenceGroup.eachCell((c) => {
+        if (c.id === cell.id) {
           c.status = 'selected'
         }
-      }))
+      })
     })
   }
   // 改变当前状态和改变其他元素状态的方法
-  judge(cell, x, y,isinit=false) {
-    if(!isinit){
+  judge(cell, x, y, isinit = false) {
+    if (!isinit) {
       this.changeCurrentCellStatus(cell, x, y)
     }
     this.fenceGroup.eachCell((cell, x, y) => {
       // 在遍历所有节点的回调中拿到潜在路径 九个节点遍历循环九次 每次都去寻找该节点的潜在路径
       const path = this._findPotentialPath(cell, x, y)
-      if(!path){
+      if (!path) {
         // 不去更改当前行已选元素的状态
         return
       }
@@ -83,8 +84,8 @@ class judger {
       const selected = this.SkuPending.findSelectedCell(i)
       // 当前行的潜在路径 0 1 2
       if (x === i) {
-        // 如果当前行的元素已经被选中 就不做任何处理  该判断存在bug，可能同行会存在几个已选元素 
-        if (this.SkuPending.isSelected(cell,x)) {
+        // 如果当前行的元素已经被选中 就不做任何处理  该判断存在bug，可能同行会存在几个已选元素
+        if (this.SkuPending.isSelected(cell, x)) {
           return
         }
         const cellCode = this._getCellCode(cell.spec)
@@ -104,6 +105,20 @@ class judger {
   _getCellCode(spec) {
     return spec.key_id + '-' + spec.value_id
   }
+  // 通过确定的SkuCode确定Sku
+  getDetermineSku() {
+    const SkuCode = this.SkuPending.getSkuCode()
+    const sku = this.fenceGroup.getSkuBySkuCode(SkuCode)
+    return sku
+  }
 
+// 获取缺失的Spec的keystitle
+       getMissingKeys(){
+         const MissingKeysIndex = this.SkuPending.getMissingSpecKeyIndex()
+         // 返回title数组
+         return MissingKeysIndex.map(index=>{
+           return this.fenceGroup.fences[index].title
+         })
+       }
 }
 export { judger }

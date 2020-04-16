@@ -1,4 +1,3 @@
-
 function mainPrice(price,discountpirce){
   // 如果有折扣 划线的是主价格
   if(!discountpirce){

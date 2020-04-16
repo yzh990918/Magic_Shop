@@ -17,8 +17,11 @@
           </view>
           <view wx:if="{{stock && stock > 10}}" class="stock">库存:  {{stock}} 件</view>
         </view>
-        <view class="select">
-          请选择
+        <view wx:if="{{!NoSpec}}" class="select">
+          <text class="left" wx:if="{{isSkuIntact}}">已选择  </text>
+          <text class="left" wx:else>请选择  </text>
+          <text class="right" wx:if="{{isSkuIntact}}">{{CurrentValues}}</text>
+          <text class="right" wx:else>{{MissingKeys}}</text>
         </view>
       </view>
     </view>

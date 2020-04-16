@@ -1,5 +1,4 @@
 import { combination } from "../../utils/util"
-
 class Code{
   Code 
   SpuId

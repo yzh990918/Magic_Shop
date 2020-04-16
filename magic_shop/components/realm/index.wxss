@@ -63,6 +63,12 @@
   margin-top: 30rpx;
 }
 .select{
-  font-size: 24rpx;
-  color: #333333;
+  font-size: 22rpx;
+  margin-top: 10rpx;
+}
+.left{
+  color: #999999;
+}
+.right{
+  color: #666666;
 }

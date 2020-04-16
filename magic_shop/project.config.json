@@ -58,7 +58,14 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/detail/index",
+					"name": "无规格",
+					"pathName": "pages/detail/index",
+					"query": "pid=11",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "有规格",
 					"pathName": "pages/detail/index",
 					"query": "pid=2",
 					"scene": null

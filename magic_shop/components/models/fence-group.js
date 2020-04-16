@@ -1,5 +1,5 @@
 import { matrix } from './matrix'
-import {Fence} from './fence'
+import { Fence } from './fence'
 class FenceGroup {
   // 抽离出一个矩阵
   spu
@@ -37,14 +37,14 @@ class FenceGroup {
   //   console.log(fences);
   // }
 
-  initFence(){
-    const matrix =this._createMatrix(this.skuList)
+  initFence() {
+    const matrix = this._createMatrix(this.skuList)
     const fences = []
     // 拿到转置矩阵
     const AT = matrix.transpose()
     // 将矩阵的元素赋给对象属性
-    AT.forEach(specs=>{
-      const fence =new Fence(specs)
+    AT.forEach((specs) => {
+      const fence = new Fence(specs)
       // 实例化Cell对象 插入到Cells属性中
       fence.init()
       // 置于fences中
@@ -53,30 +53,39 @@ class FenceGroup {
     this.fences = fences
   }
   // 遍历所有的cell
-  eachCell(cb){
-    for(let i =0;i<this.fences.length;i++){
-      for(let j = 0; j<this.fences[i].Cells.length;j++){
+  eachCell(cb) {
+    for (let i = 0; i < this.fences.length; i++) {
+      for (let j = 0; j < this.fences[i].Cells.length; j++) {
         const cell = this.fences[i].Cells[j]
-        cb(cell,i,j)
+        cb(cell, i, j)
       }
     }
   }
   // 拿到默认的sku
-  getDefaultSku(){
+  getDefaultSku() {
     const defaultID = this.spu.default_sku_id
-    const result = this.skuList.find(s=>{
+    const result = this.skuList.find((s) => {
       return s.id === defaultID
     })
     return result
   }
   // 传入cell,status就可以改变cell的状态为status
-  setCellStatusById(cellId,status){
+  setCellStatusById(cellId, status) {
     // 找到符合条件的cell
-    this.eachCell((cell)=>{
-      if(cell.id === cellId){
+    this.eachCell((cell) => {
+      if (cell.id === cellId) {
         cell.status = status
       }
     })
+  }
+
+  //* 通过skuCode 查找sku  注意要拼接一下spu的id
+  getSkuBySkuCode(code) {
+    const SkuCode = `${this.spu.id}$${code}`
+    const sku = this.spu.sku_list.find((s) => {
+      return s.code === SkuCode
+    })
+    return sku ? sku : null
   }
 }
 export { FenceGroup }
