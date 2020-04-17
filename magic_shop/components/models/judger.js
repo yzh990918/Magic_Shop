@@ -38,9 +38,11 @@ class judger {
       this.fenceGroup.eachCell((c) => {
         if (c.id === cell.id) {
           c.status = 'selected'
+          cell.status ='selected'
         }
       })
     })
+
   }
   // 改变当前状态和改变其他元素状态的方法
   judge(cell, x, y, isinit = false) {

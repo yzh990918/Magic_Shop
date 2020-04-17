@@ -7,7 +7,6 @@ Component({
     fence:Object,
     x:Number
   },
-
   /**
    * 组件的初始数据
    */

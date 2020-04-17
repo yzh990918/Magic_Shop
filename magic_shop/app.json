@@ -22,7 +22,10 @@
     "s-spu-waterflow": "/components/spu-list/index",
     "l-tag": "/miniprogram_npm/lin-ui/tag/index",
     "l-loadmore": "/miniprogram_npm/lin-ui/loadmore/index",
-    "l-textarea":"/miniprogram_npm/lin-ui/textarea/index"
+    "l-textarea":"/miniprogram_npm/lin-ui/textarea/index",
+    "l-counter":"/miniprogram_npm/lin-ui/counter/index",
+    "s-counter":"/components/counter/index",
+    "l-button":"/miniprogram_npm/lin-ui/button/index"
   },
   "tabBar": {
     "borderStyle": "black",

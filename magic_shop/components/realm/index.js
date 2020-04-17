@@ -3,6 +3,7 @@ import { FenceGroup } from '../models/fence-group'
 import { judger } from '../models/judger'
 import { Cell } from '../models/cell'
 import { Spu } from '../../model/spu'
+import { Cart } from '../models/cart'
 Component({
   /**
    * 组件的属性列表
@@ -35,12 +36,32 @@ Component({
     price: String,
     discountPrice: String,
     stock: String,
+    count:Cart.MIN_LENGTH
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    // 判断是否无货
+    onTapcount(e){
+      const count = e.detail.count
+      if(this.data.judger.SkuPending.isIntact()){
+        this.setOutOfStock(this.data.judger.getDetermineSku().stock,count)
+      }
+      this.setData({
+        count
+      })
+    },
+    isoutOfStock(stock, count) {
+      return stock < count
+    },
+    setOutOfStock(stock,count){
+      this.setData({
+        outStock:this.isoutOfStock(stock,count)
+      })
+
+    },
     // 无规格
     processNoSpec(spu) {
       this.setData({
@@ -48,6 +69,7 @@ Component({
       })
       // 无规格情况下只有一个sku
       this.bindSku(spu.sku_list[0])
+      this.setOutOfStock(spu.sku_list[0].stock,this.data.count)
       return
     },
     // 有规格
@@ -61,6 +83,7 @@ Component({
       if (defaultSku) {
         this.bindSku(defaultSku)
         this.bindTipData()
+        this.setOutOfStock(defaultSku.stock,this.data.count)
       } else {
         this.bindSpu()
         this.bindTipData()
@@ -87,11 +110,10 @@ Component({
     },
     //判断是否是完整的sku
     bindTipData() {
-     
       this.setData({
         isSkuIntact: this.data.judger.SkuPending.isIntact(),
-        CurrentValues:this.data.judger.SkuPending.getCurrentSpecValue(),
-        MissingKeys:this.data.judger.getMissingKeys()
+        CurrentValues: this.data.judger.SkuPending.getCurrentSpecValue(),
+        MissingKeys: this.data.judger.getMissingKeys(),
       })
     },
     // judge改变状态后将fences传回cell
@@ -110,13 +132,13 @@ Component({
       const judger = this.data.judger
       // 一定要传入cell模型对象保证Skupending的数组里是模型对象 不能传入propeties数组参数
       judger.judge(cell, x, y)
-      
-      
+
       // 如果是完整的sku路径 就重新绑定sku
       const SkuIntact = judger.SkuPending.isIntact()
       if (SkuIntact) {
         const currentSku = judger.getDetermineSku()
         this.bindSku(currentSku)
+        this.setOutOfStock(currentSku.stock,this.data.count)
       }
       this.bindTipData()
       // 重新渲染数据
