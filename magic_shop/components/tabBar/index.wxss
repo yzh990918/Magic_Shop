@@ -1,0 +1,31 @@
+/* components/tabBar/index.wxss */
+@import '../../iconfont';
+.container{
+  display: flex;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+}
+.icons{
+  width: 230rpx;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 40rpx 10rpx 40rpx;
+}
+.Home,.cart{
+  display: flex;
+  flex-direction: column;
+}
+.text{
+  text-align: center;
+  display: inline-block;
+  font-size: 20rpx;
+  color: #999999;
+  margin-top: 8rpx;
+}
+.right{
+  flex: 1;
+  display: flex;
+}

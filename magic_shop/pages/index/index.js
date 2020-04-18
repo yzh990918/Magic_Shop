@@ -39,6 +39,7 @@ Page({
     const themeD = await theme.getThemeD()
     // 获取B主题的spu
     let ThemeBSpuList = []
+    // 上架
     if (themeB.online) {
       let data = await Theme.getHomeLocationESpu()
       ThemeBSpuList = data.spu_list.slice(0, 8)

@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="icons">
+    <view class="Home">
+    <l-icon size="46" name="home" l-class="sleeve"></l-icon>
+        <text class="text">首页</text>
+    </view>
+    <view class="cart">
+      <l-icon size="46" name="cart" size="46" color="#157658"></l-icon>
+        <text class="text">购物车</text>
+    </view>
+  </view>
+  <view class="right">
+    <view class="r-left">
+      <l-button shape="square" bg-color="#333333" width="260" height="100">加入购物车</l-button>
+    </view>
+    <view class="r-left">
+      <l-button shape="square" bg-color="#157658" width="260" height="100">立即购买</l-button>
+    </view>
+  </view>
+</view>

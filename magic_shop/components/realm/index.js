@@ -108,7 +108,7 @@ Component({
         discountPrice: spu.discount_price,
       })
     },
-    //判断是否是完整的sku
+    //如果是完整的sku
     bindTipData() {
       this.setData({
         isSkuIntact: this.data.judger.SkuPending.isIntact(),
@@ -122,6 +122,7 @@ Component({
         fences: fenceGroup.fences,
       })
     },
+    // 监听点击事件
     oncellTap(e) {
       const data = e.detail.cell
       const x = e.detail.x

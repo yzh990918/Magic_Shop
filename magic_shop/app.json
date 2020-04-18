@@ -25,7 +25,8 @@
     "l-textarea":"/miniprogram_npm/lin-ui/textarea/index",
     "l-counter":"/miniprogram_npm/lin-ui/counter/index",
     "s-counter":"/components/counter/index",
-    "l-button":"/miniprogram_npm/lin-ui/button/index"
+    "l-button":"/miniprogram_npm/lin-ui/button/index",
+    "l-icon":"/miniprogram_npm/lin-ui/icon/index"
   },
   "tabBar": {
     "borderStyle": "black",

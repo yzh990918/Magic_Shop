@@ -1,1 +1,2 @@
-<s-relam spu="{{spu}}"></s-relam>
+<!-- <s-relam spu="{{spu}}"></s-relam> -->
+<s-tabBar></s-tabBar>

@@ -1,3 +1,4 @@
+<!-- 热门推荐 三图布局 -->
 <view class="container">
   <view class="hot">
     <image class="top-img" src="{{hotlist.img}}" />

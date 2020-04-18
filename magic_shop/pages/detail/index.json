@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "s-relam":"/components/realm/index"
+    "s-relam":"/components/realm/index",
+    "s-tabBar":"/components/tabBar/index"
   }
 }
