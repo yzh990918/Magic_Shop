@@ -18,6 +18,18 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    BackToHome(){
+      this.triggerEvent('onBackHome',{})
+    },
+    ToShopCart(){
+      this.triggerEvent('ToCart',{})
+    },
+    showRealm(){
+      this.triggerEvent('ShowRealm',{})
+    },
+    buyGoods(){
+      this.triggerEvent('buyGoods')
+    }
 
   }
 })

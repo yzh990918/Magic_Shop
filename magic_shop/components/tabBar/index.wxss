@@ -3,8 +3,8 @@
 .container{
   display: flex;
   height: 100rpx;
-  position: fixed;
-  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
 }
 .icons{
   width: 230rpx;

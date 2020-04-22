@@ -10,6 +10,7 @@ Component({
    */
   properties: {
     spu: Object,
+    orderWay:String
   },
   observers: {
     spu: function (spu) {
@@ -22,6 +23,7 @@ Component({
       } else {
         this.prcessHasSpec(spu)
       }
+      this.triggerSpec()
     },
   },
 
@@ -43,6 +45,22 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 向detail页面传值
+    triggerSpec(){
+      const NoSpec = Spu.isNoSpec(this.properties.spu)
+      if(NoSpec){
+        this.triggerEvent('specchange',{
+          NoSpec
+        })
+      }else{
+        this.triggerEvent('specchange',{
+          NoSpec,
+          isSkuIntact: this.data.judger.SkuPending.isIntact(),
+          CurrentValues: this.data.judger.SkuPending.getCurrentSpecValue(),
+          MissingKeys: this.data.judger.getMissingKeys(),
+        })
+      }
+    },
     // 判断是否无货
     onTapcount(e){
       const count = e.detail.count
@@ -144,6 +162,7 @@ Component({
       this.bindTipData()
       // 重新渲染数据
       this.getFences(judger.fenceGroup)
+      this.triggerSpec()
     },
   },
 })

@@ -1,2 +1,32 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="container">
+<view class="search-bar">
+  <l-button bind:lintap="toSearch" shape="square" l-class="search-button" height="60">
+    <l-icon name="research" size="24" color="#C4C9D2"/>
+    <text class="search-text">搜索商品</text>
+  </l-button>
+</view>
+<view class="main">
+  <view class="segment">
+     <l-segment placement="left" 
+     bind:linchange="changeTabs"
+     active-key="{{defaultID}}"
+     item-height="90"
+     width="160"
+     even="{{false}}"
+     height="{{segementHeight}}"
+      l-active-class="segment-item-active"
+      l-inactive-class="segment-item"
+      l-line-class="l-seg-line"
+      scrollable="{{true}}"
+      animated-for-line="{{false}}"
+     >
+     <block wx:for="{{roots}}" wx:key="{{index}}">
+      <l-segment-item key="{{item.id}}" tab="{{item.name}}"></l-segment-item>
+     </block>
+    </l-segment>   
+  </view>
+  <view class="content">
+    <s-category-sub bannerImg="{{currentBannerImd}}" subs="{{currentSubs}}"></s-category-sub>
+  </view>
+</view>
+</view>

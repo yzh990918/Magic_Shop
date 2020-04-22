@@ -1,2 +1,55 @@
-<!-- <s-relam spu="{{spu}}"></s-relam> -->
-<s-tabBar></s-tabBar>
+<wxs src="../../wxs/price.wxs" module="p"></wxs>
+<scroll-view class="container" style="height:{{h}}rpx" scroll-y="{{true}}">
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}" class="swiper" circular="{{true}}">
+    <block wx:for="{{spu.spu_img_list}}" wx:key="{{index}}">
+      <swiper-item>
+        <image mode="aspectFill" class="swiper-image" src="{{item.img}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="desc">
+    <view class="left">
+      <view class="title">{{spu.title}}</view>
+      <view class="tags">
+        <block wx:for="{{tags}}" wx:key="{{index}}">
+          <l-tag size="super-mini" l-class="tag">{{item}}</l-tag>
+        </block>
+      </view>
+      <view class="sub-title">{{spu.subtitle}}</view>
+      <view class="price-container">
+        <l-price l-class="price" color="#157658" size="36" unit-size="36" value="{{p.mainPrice(spu.price,spu.discount_price)}}"></l-price>
+        <l-price wx:if="{{spu.discount_price}}" deleted l-class="discount-pirce" size="23" unit-size="22" color="#888" value="{{p.slashPrice(spu.price,spu.discount_price)}}"></l-price>
+        <l-badge l-class="badge" wx:if="{{spu.discount_price}}" value="折扣" mode="text"></l-badge>
+      </view>
+    </view>
+    <view class="right">
+      <view class="wrapper">
+        <l-button open-type="share" special l-class="button">
+          <l-icon name="share" size="24" />
+          <text class="share-text">分</text>
+          <text class="share-text">享</text>
+        </l-button>
+      </view>
+    </view>
+  </view>
+  <view class="youhui"></view>
+  <view wx:if="{{!spec.NoSpec}}" class="selected" bind:tap="showRealm">
+       <view wx:if="{{!spec.NoSpec}}" class="info">
+          <view class="left" wx:if="{{spec.isSkuIntact}}">已选择</view>
+          <view class="left" wx:else>请选择</view>
+          <text class="right-t" wx:if="{{spec.isSkuIntact}}">{{spec.CurrentValues}}</text>
+          <text class="right-t" wx:else>{{spec.MissingKeys}}</text>
+        </view>
+    <l-icon name="right" size="24" color="#157658" />
+  </view>
+ <s-instruction instaruction="{{instaruction}}" ></s-instruction>
+ <view wx:if="{{spu.spu_detail_img_list}}" class="detail-imgs">
+   <block wx:for="{{spu.spu_detail_img_list}}" wx:key="{{index}}">
+     <image class="detail-img" mode="widthFix" src="{{item.img}}" />
+   </block>
+ </view>
+</scroll-view>
+<l-popup show="{{showFlag}}" content-align="bottom">
+  <s-relam bind:specchange="specChange" orderWay="{{orderWay}}" spu="{{spu}}"></s-relam>
+</l-popup>
+<s-tabBar class="tabbar" bind:onBackHome="backHome" bind:ToCart="toCart" bind:ShowRealm="showRealm" bind:buyGoods="buygoods"></s-tabBar>

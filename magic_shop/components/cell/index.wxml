@@ -1,6 +1,9 @@
 <wxs src="../../wxs/status.wxs" module="c"></wxs>
 <view bind:tap="selectCell" class="container {{c.statusStyle(Cell.status).outer}}">
   <view class="inner {{c.statusStyle(Cell.status).inner}}">
+  <view wx:if="{{Cell.img}}" class="img-wrapper">
+  <image class="img" src="{{Cell.img}}" />
+  </view>
     <text class="text">{{Cell.title}}</text>
   </view>
 </view>

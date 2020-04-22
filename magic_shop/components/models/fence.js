@@ -24,6 +24,19 @@ class Fence {
       this.Cells.push(cell)
     })
   }
+  setFenchSktech(skulist){
+    this.Cells.forEach(c=>{
+      this.setFenceSktechImg(c,skulist)
+    })
+  }
+  // 查找是否包含code码的sku
+  setFenceSktechImg(cell,Skulist){
+    const cellCode = cell._getCellCode()
+    const Sku = Skulist.find(s=>s.code.includes(cellCode))
+    if(Sku){
+      cell.img = Sku.img
+    }
+  }
 }
 export{
   Fence

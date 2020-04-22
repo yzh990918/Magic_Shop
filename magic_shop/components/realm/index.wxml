@@ -1,5 +1,6 @@
 <wxs src="../../wxs/price.wxs" module="p"></wxs>
-<view class="container">
+<scroll-view class="container" scroll-y="{{true}}">
+<view class="inner-container">
   <view class="blurb">
     <view class="img-wrapper">
       <image class="img" src="{{img}}" />
@@ -25,7 +26,7 @@
         </view>
       </view>
     </view>
-  </view>
+    </view>
   <view class="hr"></view>
   <view class="fence">
     <block wx:for="{{fences}}" wx:key="{{index}}">
@@ -37,11 +38,17 @@
     <s-counter bind:lintap="onTapcount"></s-counter>
   </view>
 </view>
+</scroll-view>
 <view class="bottom">
   <view wx:if="{{!outStock}}" class="normal">
+  <view wx:if="{{orderWay==='cart'}}">
     <l-button height="100" size="long" bg-color="#333333" >加入购物车</l-button>
   </view>
-  <view  wx:else class="overStock" >
+  <view wx:if="{{orderWay==='buy'}}">
+    <l-button height="100" size="long" bg-color="#157658" >立即购买</l-button>
+  </view>
+  </view>
+  <view  wx:if="{{outStock }}" class="overStock" >
     <l-button height="100"  size="long" bg-color="#DCEBE6" >暂时缺货</l-button>
   </view>
 </view>

@@ -47,10 +47,22 @@ class FenceGroup {
       const fence = new Fence(specs)
       // 实例化Cell对象 插入到Cells属性中
       fence.init()
+      if (this._hasSktech_id() && this._IsSktech_id(fence.title_id)) {
+        fence.setFenchSktech(this.skuList)
+      }
       // 置于fences中
       fences.push(fence)
     })
     this.fences = fences
+    console.log(fences)
+  }
+  // 判断是否有sktech_id
+  _hasSktech_id() {
+    return this.spu.sketch_spec_id ? true : false
+  }
+  // 判断是否等于spu.id
+  _IsSktech_id(fenceId) {
+    return this.spu.sketch_spec_id === fenceId ? true : false
   }
   // 遍历所有的cell
   eachCell(cb) {

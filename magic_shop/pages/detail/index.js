@@ -1,4 +1,6 @@
 import { Spu } from "../../model/spu"
+import { SpuInstruction } from "../../model/Spu-instruction"
+import { getWindowHeight } from "../../utils/system"
 
 // pages/detail/index.js
 Page({
@@ -7,7 +9,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    spu:null
+    spu:null,
+    showFlag:false,
+    tags:[],
+    spec:null,
+    instaruction:[],
+    h:0
   },
 
   /**
@@ -20,8 +27,71 @@ Page({
     this.setData({
       spu
     })
+    this.setTags()
+    this.getSpuInstruction()
+    this.setScrollViewHeight()
   },
-
+  async setScrollViewHeight(){
+    const height = await getWindowHeight() - 100
+    this.setData({
+      h:height
+    })
+  },
+  async getSpuInstruction(){
+    const data=await SpuInstruction.getSpuInstruction()
+    const instaruction = data.map(item=>item.text)
+    this.setData({
+      instaruction
+    })
+  },
+  setTags(){
+    const spu = this.data.spu
+    if(!spu){
+      return
+    }
+    if(!spu.tags){
+      return
+    }
+    const tags = spu.tags.split('$')
+    this.setData({
+      tags
+    })
+  },
+  backHome(){
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
+  },
+  toCart(){
+    wx.switchTab({
+      url: '/pages/cart/index'
+    })
+  },
+  showRealm(){
+    this.setData({
+      showFlag:true,
+      orderWay:'cart'
+    })
+  },
+  specChange(event){
+    const spec = event.detail
+    console.log(spec)
+    this.setData({
+      spec
+    })
+  },
+  buygoods(){
+    this.setData({
+      showFlag:true,
+      orderWay:'buy'
+    })
+  },
+  showRealm(){
+    this.setData({
+      showFlag:true,
+      orderWay:'cart'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

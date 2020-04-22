@@ -1,0 +1,24 @@
+<view class="container">
+<view class="banner">
+  <image class="banner-img" src="{{bannerImg}}" />
+</view>
+<view class="grid">
+  <view class="grid-text">
+  <text class="text" >---- 全部分类 ----</text>
+  </view>
+<l-grid row-num="3" l-class="grid-container">
+    <block wx:for="{{subs}}" wx:key="{{index}}">
+    <l-grid-item key="{{item.id}}" slot="{{item.id}}">
+    <view 
+    class="grid-item"
+    hover-class="react-hover"
+    hover-stay-time="500"
+    >
+    <image class="image" src="{{item.img}}" />
+    <text class="text" >{{item.name}}</text>
+    </view>
+    </l-grid-item>
+    </block>
+  </l-grid>
+</view>
+</view>

@@ -1,0 +1,44 @@
+@import '../../assets/hover';
+.container{
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.banner{
+  width: 550rpx;
+  height: 160rpx;
+  margin-bottom: 44rpx;
+}
+.banner-img{
+  width: 550rpx;
+  height: 160rpx;
+}
+.grid{
+  padding: 24rpx;
+}
+.grid-text{
+  display: flex;
+  justify-content: center;
+  font-size: 24rpx;
+  color: #333333;
+  margin-bottom: 26rpx;
+}
+.grid-item{
+  /* 不要设置高度 因为宫格组件会自适应 设置宽度扩大点击区域 */
+  width: 120rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rpx;
+  justify-content: center;
+}
+.image{
+  width:120rpx;
+  height:120rpx;
+}
+
+.text{
+  margin-top: 6rpx;
+  font-size: 20rpx;
+  color: #333333;
+}

@@ -14,6 +14,15 @@
   padding: 0 15rpx;
   font-size: 24rpx;
 }
+.img{
+  width: 40rpx;
+  height: 40rpx;
+}
+.img-wrapper{
+  display: flex;
+  margin-left: -10rpx;
+  margin-right: 6rpx;
+}
 .text{
   display: inline-block;
 }

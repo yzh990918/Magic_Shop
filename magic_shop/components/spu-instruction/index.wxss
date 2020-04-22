@@ -1,0 +1,31 @@
+.container{
+  margin-top: 20rpx;
+  display: flex;
+  padding: 25rpx;
+  background-color: #ffffff;
+}
+.inner{
+  border: 2rpx dashed #bbbbbb;
+  width: 730rpx;
+}
+.cell{
+  padding: 16rpx;
+  box-sizing: border-box;
+  font-size: 23rpx;
+  line-height: 36rpx;
+  color: #333333;
+}
+.cell::before{
+  margin-right: 20rpx;
+  content: '-';
+}
+.hr{
+  background-color: #DCEBE6;
+  height: 2rpx;
+  margin-left: 26rpx;
+  margin-right:26rpx;
+}
+.hr:last-child{
+  height: 0;
+}
+

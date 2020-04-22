@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="inner">
+    <block wx:for="{{instaruction}}" wx:key="{{index}}">
+      <view class="cell">{{item}}</view>
+      <view class="hr"></view>
+    </block>
+  </view>
+</view>
