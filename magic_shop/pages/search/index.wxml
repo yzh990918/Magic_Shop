@@ -1,2 +1,42 @@
-<!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<view class="container">
+  <view class="search-bar">
+    <l-search-bar placeholder="搜索商品" maxlength="9" bind:linconfirm="onConfirm" value="{{value}}" bind:lincancel="onCancel"></l-search-bar>
+  </view>
+  <view wx:if="{{!search}}" class="tags">
+    <view class="history-search" wx:if="{{historytags.length > 0}}">
+      <view class="header">
+        <view class="slide"></view>
+        <view class="title">历史搜索</view>
+        <view class="space"></view>
+        <view bind:tap="deleteHistory">
+        <l-icon  l-class="delete" color="#157658" size="32" name="delete" />
+        </view>
+      </view>
+      <view class="tags-group">
+       <block wx:for="{{historytags}}" wx:key="{{index}}">
+        <l-tag color="#C4C9D2" bind:lintap="onConfirm" l-class="tag" name="{{item}}">{{item}}</l-tag>
+      </block>
+      </view>
+    </view>
+    <view class="hot-search">
+     <view class="header">
+        <view class="slide"></view>
+        <view class="title">热门搜索</view>
+        <view class="space"></view>
+      </view>
+      <view class="tags-group">
+      <block wx:for="{{hottags}}" wx:key="{{index}}">
+        <l-tag l-select-class="select" select="{{item.highlight}}" bind:lintap="onConfirm" l-class="tag" name="{{item.title}}">{{item.title}}</l-tag>
+      </block>
+      </view>
+    </view>
+  </view>
+  <view class="search-results" wx:if="{{search}}">
+    <l-water-flow generic:l-water-flow-item="s-spu-waterflow"></l-water-flow>
+    <l-loadmore wx:if="{{!status}}" show type="end" end-text="杨先生作品" line />
+  </view>
+  <l-status-show l-class="status" full-screen="{{false}}" type="product" show="{{status}}"></l-status-show>
+</view>
+<l-loading />
+<l-dialog />
+

@@ -36,7 +36,10 @@
   width:120rpx;
   height:120rpx;
 }
-
+.text-c{
+  font-size: 26rpx;
+  color: #666666;
+}
 .text{
   margin-top: 6rpx;
   font-size: 20rpx;

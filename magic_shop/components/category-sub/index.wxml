@@ -4,7 +4,7 @@
 </view>
 <view class="grid">
   <view class="grid-text">
-  <text class="text" >---- 全部分类 ----</text>
+  <text class="text-c" >-  全部分类  -</text>
   </view>
 <l-grid row-num="3" l-class="grid-container">
     <block wx:for="{{subs}}" wx:key="{{index}}">
