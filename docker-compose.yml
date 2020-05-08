@@ -1,0 +1,15 @@
+version: '3'
+services: 
+  mysql1:
+    image: mysql
+    environment: 
+    - MYSQL_ROOT_PASSWORD=123456
+    ports:
+    - 8271:3306
+ 
+    mysql2:
+    image: mysql
+    environment: 
+    - MYSQL_ROOT_PASSWORD=123456
+    ports:
+    - 8272:3306

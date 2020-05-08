@@ -54,7 +54,6 @@ class FenceGroup {
       fences.push(fence)
     })
     this.fences = fences
-    console.log(fences)
   }
   // 判断是否有sktech_id
   _hasSktech_id() {

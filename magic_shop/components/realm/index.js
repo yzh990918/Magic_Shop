@@ -45,7 +45,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    // 向detail页面传值
+    // 选择联动
     triggerSpec(){
       const NoSpec = Spu.isNoSpec(this.properties.spu)
       if(NoSpec){
@@ -61,6 +61,40 @@ Component({
         })
       }
     },
+    // 点击加入购物车按钮或者立即购买
+    shopping() {
+      if(Spu.isNoSpec(this.properties.spu)){
+        const sku = this.properties.spu.sku_list[0]
+        this.triggerSpuEvent(sku)
+        return
+      }
+        this.shopingHasSpec()
+    },
+
+// 辅助函数 抛出添加购物车的商品信息
+triggerSpuEvent (sku) {
+  this.triggerEvent("shopping",{
+    orderWay:this.properties.orderWay,
+    spuID: this.properties.spu.id,
+    sku,
+    skuCount:this.data.count
+  })
+},
+// 购买与规格商品
+shopingHasSpec(){
+  if(!this.data.isSkuIntact){
+    const missKeys = this.data.judger.getMissingKeys()
+    wx.showToast({
+      title: `请选择${missKeys.join(',')}`,
+      icon: 'none',
+      duration:3000
+    })
+    return
+  }
+  this.triggerSpuEvent(this.data.judger.getDetermineSku())
+},
+
+
     // 判断是否无货
     onTapcount(e){
       const count = e.detail.count
@@ -140,7 +174,7 @@ Component({
         fences: fenceGroup.fences,
       })
     },
-    // 监听点击事件
+    // 监听cell点击事件
     oncellTap(e) {
       const data = e.detail.cell
       const x = e.detail.x

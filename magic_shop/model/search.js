@@ -10,7 +10,7 @@ class Search{
     }
     static searchKeywords(keyword){
       return new Paging({
-        url:`/search?q=${keyword}`
+        url:`/spu/search?q=${keyword}`
       })
     }
 }

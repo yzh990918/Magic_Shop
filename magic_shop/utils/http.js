@@ -5,7 +5,7 @@ class Http {
    static async request({url,data,method='GET'}){
     // 封装小程序的wx.request方法 转为promise
     return await promisic(wx.request)({
-      url:`${config.baseURL}${url}`,
+      url:`${config.mobelURL}${url}`,
       data,
       method,
       header:{

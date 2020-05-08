@@ -11,7 +11,9 @@ Page({
     items:[],
     search:false,
     value:'',
-    status:false
+    status:false,
+    SearchPaging:null,
+    endText:"努力中的杨先生作品"
   },
   //todo: History-keywords类 热门搜索 搜索历史 搜索bar 搜索结果展示
   /**
@@ -69,8 +71,8 @@ Page({
       fullScreen:true
     })
     // 搜索
-    const SearchPaging = Search.searchKeywords(keyword)
-    const data = await SearchPaging.getMoreData()
+    this.data.SearchPaging = Search.searchKeywords(keyword)
+    const data = await this.data.SearchPaging.getMoreData()
     if(!data){
       return
     }
@@ -139,7 +141,17 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: async function () {
+   const data = await this.data.SearchPaging.getMoreData()
+   if(!data){
+     return
+   }
+   wx.lin.renderWaterFlow(data.items)
+   if(!data.moreData){
+     this.setData({
+       endText:"没有更多数据了~"
+     })
+   }
 
   },
 

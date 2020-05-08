@@ -33,7 +33,7 @@
   </view>
   <view class="search-results" wx:if="{{search}}">
     <l-water-flow generic:l-water-flow-item="s-spu-waterflow"></l-water-flow>
-    <l-loadmore wx:if="{{!status}}" show type="end" end-text="杨先生作品" line />
+    <l-loadmore wx:if="{{!status}}" show type="end" end-text="{{endText}}" line />
   </view>
   <l-status-show l-class="status" full-screen="{{false}}" type="product" show="{{status}}"></l-status-show>
 </view>

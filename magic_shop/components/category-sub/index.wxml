@@ -14,7 +14,7 @@
     hover-class="react-hover"
     hover-stay-time="500"
     >
-    <image class="image" src="{{item.img}}" />
+    <image mode="aspectFit" class="image" src="{{item.img}}" />
     <text class="text" >{{item.name}}</text>
     </view>
     </l-grid-item>
