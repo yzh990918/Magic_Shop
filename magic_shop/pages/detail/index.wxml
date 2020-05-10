@@ -52,5 +52,5 @@
 <l-popup show="{{showFlag}}" content-align="bottom">
   <s-relam bind:shopping="onShopping" bind:specchange="specChange" orderWay="{{orderWay}}" spu="{{spu}}"></s-relam>
 </l-popup>
-<s-tabBar class="tabbar" bind:onBackHome="backHome" bind:ToCart="toCart" bind:ShowRealm="showRealm" bind:buyGoods="buygoods"></s-tabBar>
+<s-tabBar class="tabbar" cartItemsCount="{{cartItemsCount}}" bind:onBackHome="backHome" bind:ToCart="toCart" bind:ShowRealm="showRealm" bind:buyGoods="buygoods"></s-tabBar>
 <l-toast/>

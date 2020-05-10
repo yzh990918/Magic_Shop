@@ -1,10 +1,10 @@
 import { Spu } from "../../model/spu"
 import { SpuInstruction } from "../../model/Spu-instruction"
 import { getWindowHeight } from "../../utils/system"
-
+import { cartItem } from "../../model/cart-item"
+import { Cart } from "../../model/cart"
 // pages/detail/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -14,7 +14,8 @@ Page({
     tags:[],
     spec:null,
     instaruction:[],
-    h:0
+    h:0,
+    cartItemsCount:0
   },
 
   /**
@@ -33,8 +34,10 @@ Page({
   },
   async setScrollViewHeight(){
     const height = await getWindowHeight() - 100
+    const cart = new Cart()
     this.setData({
-      h:height
+      h:height,
+      cartItemsCount:cart.getCartSkuNums()
     })
   },
   async getSpuInstruction(){
@@ -94,16 +97,31 @@ Page({
 
   // 接收控制器传来的商品信息
   onShopping(event){
-    console.log(event)
+    if(event.detail.orderWay === 'cart'){
+      const CartItem = new cartItem(event.detail.sku,event.detail.skuCount) 
+      const cart = new Cart()
+      cart.addItem(CartItem)
+      this.setData({
+        showFlag:false
+      })
+      this.refreshNum()
+      wx.lin.showToast({
+        title: '加入购物车成功~',
+        icon: 'success',
+        success: (res) => {
+          console.log(res)
+        }
+      })
+    }
+  
+  },
+
+  refreshNum(){
+    const cart = new Cart()
+    console.log(cart.getCartSkuNums())
     this.setData({
-      showFlag:false
+      cartItemsCount: cart.getCartSkuNums()
     })
-    wx.lin.showToast({
-      title: '加入购物车成功~',
-      icon: 'success',
-      success: (res) => {
-        console.log(res)
-      }
-    })
+
   }
 })

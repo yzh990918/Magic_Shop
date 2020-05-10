@@ -1,0 +1,22 @@
+/* components/emptyPage/index.wxss */
+.container{
+  width: 600rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  columns: #333333;
+}
+.img{
+  display: inline-block;
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 40rpx;
+}
+.text{
+  margin-bottom: 50rpx;
+}
+.btn{
+  background-color: #157658!important;
+  color: #ffffff!important;
+}

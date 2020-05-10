@@ -36,7 +36,10 @@
     "l-dialog":"/miniprogram_npm/lin-ui/dialog/index",
     "l-status-show":"/miniprogram_npm/lin-ui/status-show/index",
     "l-loading":"/miniprogram_npm/lin-ui/loading/index",
-    "l-toast":"/miniprogram_npm/lin-ui/toast/index"
+    "l-toast":"/miniprogram_npm/lin-ui/toast/index",
+    "l-slide-view":"/miniprogram_npm/lin-ui/slide-view/index",
+    "l-checkbox":"/magic_shop/miniprogram_npm/lin-ui/checkbox/index",
+    "s-cart-item":"/components/cart-item/index"
   },
   "tabBar": {
     "borderStyle": "black",

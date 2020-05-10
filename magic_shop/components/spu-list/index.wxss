@@ -56,3 +56,10 @@
   margin-left: 20rpx!important;
   font-size: 22rpx!important;
 }
+
+.discount-tag {
+  width: 40rpx;
+  height: 100rpx;
+  position: absolute;
+  /*z-index: 10;*/
+}
