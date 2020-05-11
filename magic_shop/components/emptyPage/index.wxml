@@ -1,5 +1,5 @@
 <view class="container">
-<image class="img" src="../../imgs/imgs/empty.png">
+<image class="img" src="../../imgs/imgs/empty.png" />
 <text class="text">{{text}}</text>
-<l-button wx:if="{{showBtn}}" size="mini" bind:lintap="onTap" l-class="btn"></l-button>
-</view>>
+<l-button wx:if="{{showBtn}}" size="mini" bind:lintap="onTap" l-class="btn">{{btnText}}</l-button>
+</view>

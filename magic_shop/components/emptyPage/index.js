@@ -5,7 +5,8 @@ Component({
    */
   properties: {
     text:String,
-    showBtn:Boolean
+    showBtn:Boolean,
+    btnText:String
   },
 
   /**
@@ -19,6 +20,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onTap(){
+     wx.switchTab({
+       url:"/pages/category/index"
+     })
+    }
 
   }
 })

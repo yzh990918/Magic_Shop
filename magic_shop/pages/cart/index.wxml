@@ -1,27 +1,28 @@
 <view wx:if="{{!isEmpty}}" class="container">
   <block wx:for="{{cartItems}}" wx:key="{{index}}">
-    <s-cart-item cart-item="{{item}}"></s-cart-item>
+    <s-cart-item bind:deleteItem="deleteCartItem" bind:checkItem="checkCartItem" bind:changeCount="changeCartItemCount" cart-item="{{item}}"></s-cart-item>
   </block>
 </view>
->
+
 <view class="empty-container" wx:if="{{isEmpty}}">
   <s-empty show-btn show text="购物车空空的，去逛逛吧" btn-text="去逛逛"></s-empty>
 </view>
-
 <!-- 底部结算框 -->
 <view wx:if="{{!isEmpty}}" class="total-container">
   <view class="data-container">
-    <view class="checkbox-container">
-       <l-checkbox checked="{{allChecked}}" size="40" select-color="#157658" color="#DCEBE6" bind:linchange="checkAll"></l-checkbox>
+    <view class="checkbox-container" wx:if="{{!isEmpty}}">
+     <l-checkbox-group bind:linchange="checkAll">
+     <l-checkbox key="1" checked="{{allChecked}}" size="40rpx" select-color="#157658" color="#DCEBE6" ></l-checkbox>
+    </l-checkbox-group>
       <text>全选</text>
     </view>
     <view class="price-container">
       <text>合计</text>
-      <l-price value="{{totalPrice}}" color="#157658" count-size="32" unit-size="32"></l-price>
+      <l-price value="{{totalPrice}}" color="#157658" value-size="38" unit-size="38"></l-price>
     </view>
   </view>
-  <view bind:tap="onSettle" class="settlement-btn {{totalSkuCount===0?'disabled':''}}">
-    <text>结算 ( {{totalSkuCount}} )</text>
+  <view bind:tap="onSettle" class="settlement-btn {{totalCount===0?'disabled':''}}">
+    <text>结算 ( {{totalCount}} )</text>
   </view>
 </view>
 <view style="height: 100rpx"></view>

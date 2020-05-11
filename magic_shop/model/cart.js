@@ -118,7 +118,6 @@ class Cart {
       this.checkedPrice = accAdd(this.checkedPrice, partPrice)
       this.checkedCount = accAdd(this.checkedCount, Item.count)
     }
-    console.log(this.checkedCount, this.checkedPrice)
   }
 
   _refreshCartData() {
@@ -178,7 +177,7 @@ class Cart {
   replcaSkuCount(skuId, newCount) {
     // 判断极端情况 1.没有找到已存在的商品 2.商品数量小于1 3.商品的数量超过最大限制
     const oldItem = this._findEqualItem(skuId)
-    if (oldItem) {
+    if (!oldItem) {
       console.error('异常情况，缓存中找不到该商品')
     }
     if (newCount < 1) {
@@ -199,11 +198,11 @@ class Cart {
   }
 
   // 判断是否售空
-  static isSoldOut(item) {
+   isSoldOut(item) {
     return item.sku.stock === 0
   }
   // 判断上架
-  static isOnline(item) {
+  isOnline(item) {
     return item.sku.online
   }
   // 本地获取购物车数据
@@ -221,7 +220,6 @@ class Cart {
     }
     this._refreshByServerData(serverData)
     this._calCheckedPrice()
-    this._refreshByServerData()
     return this._getCartData()
   }
   // 更新原有的购物车数据
