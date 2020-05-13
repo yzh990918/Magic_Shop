@@ -5,7 +5,8 @@
     "pages/cart/index",
     "pages/category/index",
     "pages/detail/index",
-    "pages/search/index"
+    "pages/search/index",
+    "pages/order/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,16 +33,17 @@
     "l-popup": "/miniprogram_npm/lin-ui/popup/index",
     "l-segment": "/miniprogram_npm/lin-ui/segment/index",
     "l-segment-item": "/miniprogram_npm/lin-ui/segment-item/index",
-    "l-search-bar":"/miniprogram_npm/lin-ui/search-bar/index",
-    "l-dialog":"/miniprogram_npm/lin-ui/dialog/index",
-    "l-status-show":"/miniprogram_npm/lin-ui/status-show/index",
-    "l-loading":"/miniprogram_npm/lin-ui/loading/index",
-    "l-toast":"/miniprogram_npm/lin-ui/toast/index",
-    "l-slide-view":"/miniprogram_npm/lin-ui/slide-view/index",
-    "l-checkbox":"/miniprogram_npm/lin-ui/checkbox/index",
-    "l-checkbox-group":"/miniprogram_npm/lin-ui/checkbox-group/index",
-    "s-cart-item":"/components/cart-item/index",
-    "s-empty":"/components/emptyPage/index"
+    "l-search-bar": "/miniprogram_npm/lin-ui/search-bar/index",
+    "l-dialog": "/miniprogram_npm/lin-ui/dialog/index",
+    "l-status-show": "/miniprogram_npm/lin-ui/status-show/index",
+    "l-loading": "/miniprogram_npm/lin-ui/loading/index",
+    "l-toast": "/miniprogram_npm/lin-ui/toast/index",
+    "l-slide-view": "/miniprogram_npm/lin-ui/slide-view/index",
+    "l-checkbox": "/miniprogram_npm/lin-ui/checkbox/index",
+    "l-checkbox-group": "/miniprogram_npm/lin-ui/checkbox-group/index",
+    "s-cart-item": "/components/cart-item/index",
+    "s-empty": "/components/emptyPage/index",
+    "s-address":"/components/address/index"
   },
   "tabBar": {
     "borderStyle": "black",

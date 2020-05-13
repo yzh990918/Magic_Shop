@@ -45,7 +45,7 @@
   content: "\e600";
 }
 
-.l-icon-address:before {
+.l-icon-Address:before {
   content: "\e601";
 }
 

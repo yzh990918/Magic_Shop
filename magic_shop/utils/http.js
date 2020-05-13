@@ -4,7 +4,7 @@ import {config} from '../config/config'
 class Http {
    static async request({url,data,method='GET'}){
     // 封装小程序的wx.request方法 转为promise
-    return await promisic(wx.request)({
+    const res =  await promisic(wx.request)({
       url:`${config.mobelURL}${url}`,
       data,
       method,
@@ -12,6 +12,7 @@ class Http {
         appkey:config.appkey
       }
     })
+    return res.data
   }
 }
 export{

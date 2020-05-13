@@ -81,6 +81,13 @@
 					"id": -1,
 					"name": "pages/search/index",
 					"pathName": "pages/search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/order/index",
 					"scene": null
 				}
 			]

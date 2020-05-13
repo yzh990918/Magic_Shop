@@ -48,7 +48,7 @@
     justify-content:center;
 }
 .image-stock-pinch{
-  /* 底部售完标签 */
+  /* 底部售完标签文字样式*/
   position: absolute;
   width: 100%;
   height: 30rpx;
