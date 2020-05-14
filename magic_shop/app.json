@@ -43,7 +43,9 @@
     "l-checkbox-group": "/miniprogram_npm/lin-ui/checkbox-group/index",
     "s-cart-item": "/components/cart-item/index",
     "s-empty": "/components/emptyPage/index",
-    "s-address":"/components/address/index"
+    "s-address":"/components/address/index",
+    "l-avatar":"/miniprogram_npm/lin-ui/avatar/index",
+    "l-list":"/miniprogram_npm/lin-ui/list/index"
   },
   "tabBar": {
     "borderStyle": "black",

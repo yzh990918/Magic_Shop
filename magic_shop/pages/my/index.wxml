@@ -1,2 +1,13 @@
-<!--pages/my/index.wxml-->
-<text>pages/my/index.wxml</text>
+<view class="container">
+  <s-my-banner counpons="3"></s-my-banner>
+  <s-order-panel></s-order-panel>
+  <view class="list-wrapper">
+    <l-list  title="全部订单" tag-color="#157658" gap="40" icon="order1" l-icon-class="sleeve"  />
+    <l-list title="收货地址"  tag-color="#157658" gap="40" icon="address2" l-icon-class="sleeve" />
+    <l-list title="优惠券"  tag-color="#157658" gap="40" icon="coupon" l-icon-class="sleeve" />
+    <l-list title="消息"  tag-color="#157658" gap="40" icon="notification" l-icon-class="icons"  />
+    <l-list title="开发日志" l-icon-class="icons"  tag-color="#157658" gap="40" icon="order"  />
+    <l-list title="赞赏作者" l-icon-class="icons"  tag-color="#157658" gap="40" icon="user"  />
+     <l-list title="分享" l-icon-class="icons"  tag-color="#157658" gap="40" icon="share"  />
+  </view>
+</view>

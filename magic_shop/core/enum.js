@@ -3,4 +3,10 @@ const CellStatus = {
   SELECTED: 'selected',
   WAITING: 'waiting',
 }
-export { CellStatus }
+
+const AuthorizedStatus = {
+  AUTHORIZED: 'authorized',
+  DENY: 'deny',
+  UNAUTHORIZED: 'unauthorized',
+}
+export { CellStatus, AuthorizedStatus }

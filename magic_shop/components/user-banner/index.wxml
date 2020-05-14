@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="inner-container">
+    <view class="userInfo">
+      <l-avatar size="140" class="avatar-container" shape="square" open-data="{{['userAvatarUrl','userNickName']}}"></l-avatar>
+      <l-button wx:if="{{showLoginBtn}}" l-class="auth-btn" bg-color="#DCEBE6" open-type="getUserInfo" bind:getuserinfo="onAuthUserInfo" height="48" width="120">
+        登 录
+      </l-button>
+    </view>
+    <view class="bottom-about">
+      <view class="left">
+        <view class="num">{{coupons}}</view>
+        <view class="desc"><text>优惠券</text></view>
+      </view>
+      <view class="right">
+        <view class="icon-wrapper">
+          <l-icon l-class="sleeve" name="about" size="36"></l-icon>
+        </view>
+        <view class="desc"><text>关于我们</text></view>
+      </view>
+    </view>
+  </view>
+</view>

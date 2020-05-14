@@ -1,6 +1,5 @@
 import { accMultiply, accAdd } from '../utils/Number'
 import { Sku } from './sku'
-
 class Cart {
   static SKU_MIN_COUNT = 1
   static SKU_MAXCOUNT = 99
@@ -17,6 +16,7 @@ class Cart {
     Cart.instance = this
     return this
 }
+
 
 
   _initCarDataStorage() {
@@ -44,6 +44,7 @@ class Cart {
 
   //! 核心方法
 
+  // * 购物车需要
   // 加入购物车
   addItem(newItem) {
     if (this._beyondCartStock()) {
@@ -54,6 +55,7 @@ class Cart {
     this._refreshCartData()
   }
 
+  // * 购物车需要
   // 删除购物车商品
   removeItem(skuId) {
     const cartData = this._getCartData()
@@ -130,6 +132,7 @@ class Cart {
 
   //! 辅助方法
 
+  // * 购物车需要
   // 获取选中的商品
   getCheckedItems() {
     const cartData = this._getCartData()
@@ -142,6 +145,7 @@ class Cart {
     return checkedItems
   }
 
+  // * 购物车需要
   // 判断是否全选
   isAllChecked() {
     let allchecked = true
@@ -155,6 +159,7 @@ class Cart {
     return allchecked
   }
 
+  // * 购物车需要
   // 全选操作(每次操作都要进行计算价格和刷新数据)
   checkALl(checked) {
     const cartData = this._getCartData()
@@ -165,6 +170,7 @@ class Cart {
     this._refreshCartData()
   }
 
+  // * 购物车需要
   // 选中单个元素 改变状态即可
   checkItem(skuId) {
     const oldItem = this._findEqualItem(skuId)
@@ -173,6 +179,7 @@ class Cart {
     this._refreshCartData()
   }
 
+  // * 购物车需要
   // 更新sku商品的数量
   replcaSkuCount(skuId, newCount) {
     // 判断极端情况 1.没有找到已存在的商品 2.商品数量小于1 3.商品的数量超过最大限制
@@ -191,25 +198,33 @@ class Cart {
     this._refreshCartData()
   }
 
+  // * 购物车需要
   // 判断购物车为空
   isEmpty() {
     const cartData = this._getCartData()
     return cartData.items.length === 0 ? true : false
   }
 
+  // * 购物车需要
   // 判断是否售空
    isSoldOut(item) {
     return item.sku.stock === 0
   }
+
+  // * 购物车需要
   // 判断上架
   isOnline(item) {
     return item.sku.online
   }
+
+  // * 购物车需要
   // 本地获取购物车数据
   getLocalCartData() {
     return this._getCartData()
   }
 
+
+  // * 购物车需要
   // 服务端获取购物车数据 先获取数据,再更新数据,再返回
   async getServerCartData() {
     let Ids = this.getSkuIds()
@@ -222,6 +237,7 @@ class Cart {
     this._calCheckedPrice()
     return this._getCartData()
   }
+
   // 更新原有的购物车数据
   _refreshByServerData(serverData){
     const cartData = this._getCartData()
@@ -238,7 +254,7 @@ class Cart {
     })
   }
 
- 
+ // * 订单页面需要
   // 获取购物车skuId组成的数组
   getSkuIds(){
     const cartData = this._getCartData()
@@ -254,6 +270,7 @@ class Cart {
     return cartData.items.length
   }
 
+   // * 订单页面需要
   // 获取选中的商品的skuIds
   getCheckedSkuIds() {
     const cartData = this._getCartData()
@@ -268,6 +285,8 @@ class Cart {
     })
     return skuId
 }
+
+ // * 订单页面需要
 // 通过skuId获取购物车该商品数量
 getSkuCountBySkuId(skuId) {
     const cartData = this._getCartData()

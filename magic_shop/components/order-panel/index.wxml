@@ -1,0 +1,25 @@
+<view class="container">
+<view class="inner-panel">
+  <view class="title">
+    <text>我的订单</text>
+  </view>
+  <view class="item-row">
+    <view class="icon-item">
+      <l-icon name="unpaid" l-class="sleeve" ></l-icon>
+      <text>待支付</text>
+    </view>
+    <view class="icon-item">
+      <l-icon name="paid" l-class="sleeve" ></l-icon>
+      <text>已支付</text>
+    </view>
+    <view class="icon-item">
+      <l-icon name="delivered" l-class="sleeve" ></l-icon>
+      <text>待收货</text>
+    </view>
+    <view class="icon-item">
+      <l-icon name="over" l-class="sleeve" ></l-icon>
+      <text>已完成</text>
+    </view>
+  </view>
+</view>
+</view>

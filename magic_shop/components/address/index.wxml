@@ -1,25 +1,28 @@
 <view class="container">
-  <l-button shape="square" wx:if="{{!hasChosen}}" 
-              icon="edit"
-              icon-size="28"
-              icon-color="#157658"
-              width="360" 
-              height="88" l-class="btn">添加地址</l-button>
+  <l-button shape="square" wx:if="{{!hasChosen}}" icon="edit" icon-size="28" icon-color="#157658" width="360" height="88" l-class="btn" bind:lintap="addAddresss">
+    添加地址
+  </l-button>
   <view class="address-info-container" wx:if="{{hasChosen}}">
     <view class="icon-container">
- <l-icon size="42" name="address1" l-class="sleeve" color="#157658"></l-icon>
+      <l-icon size="42" name="address1" l-class="sleeve" color="#157658"></l-icon>
     </view>
     <view class="content">
       <view class="top">
-        <view class="user">用户名</view>
-        <view class="phone">1545662266</view>
+        <view class="user">{{address.userName}}</view>
+        <view class="phone">{{address.telNumber}}</view>
       </view>
-      <view class="address">南昌市安义县奥术大师大所多奥术大师</view>
+      <view class="address">
+        <text>{{address.provinceName}}</text>
+        <text>{{address.cityName}}</text>
+        <text>{{address.countyName}}</text>
+        <text>{{address.detailInfo}}</text>
+      </view>
     </view>
     <view class="space"></view>
     <view class="icon-right">
-    <l-icon name="right" size="42" color="#333333" />
+      <l-icon name="right" size="42" color="#333333" />
     </view>
   </view>
   <image src="../../imgs/imgs/bottom@address.png" class="bottom-image" />
 </view>
+<l-dialog content-color="#333333" confirm-color="#157658" title-color="#157658" bind:linconfirm="onDialogConfirm" show="{{showDialog}}" content="请先授权《墨痕》获取您的收货地址" title="授权"></l-dialog>
