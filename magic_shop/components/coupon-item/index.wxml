@@ -1,0 +1,29 @@
+<wxs src="../../wxs/coupon.wxs" module="s"></wxs>
+
+<view class="container bg-{{_status}}">
+  <view class="inner-container">
+    <view class="left {{_status===1?'touch-disable':''}}">
+      <view class="price-wrapper">
+        <!-- 全场券 -->
+        <view wx:if="{{_coupon.type === 2}}">
+          <text class="rate">{{_coupon.rate * 10}}</text>
+          <text style="font-size:40rpx;">折</text>
+        </view>
+        <!-- 满减券 -->
+        <l-price wx:else size="60" value="{{_coupon.minus}}" color="{{s.couponColorStatus(_status)}}"></l-price>
+        <view class="coupon-c">
+             <text style="margin-left:10rpx; margin-top:18rpx">{{_coupon.title}}</text>
+        </view>
+      </view>
+      <view class="coupon-desc">
+      <text> {{_coupon.remark}}</text>
+      </view>
+    </view>
+    <view class="right">
+      <view data-id="{{_coupon.id}}" class="touch-reigin" bind:tap="onGetCoupon"></view>
+      <view class="time">
+        <text>{{_coupon.startTime}}-{{_coupon.endTime}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -24,7 +24,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.4",
-	"appid": "wxef187417f7dff3ab",
+	"appid": "wxdcb143e3cf5afacd",
 	"projectname": "Magic_shop",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -88,6 +88,13 @@
 					"id": -1,
 					"name": "订单",
 					"pathName": "pages/order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "优惠券",
+					"pathName": "pages/coupon/index",
 					"scene": null
 				}
 			]

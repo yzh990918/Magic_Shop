@@ -270,7 +270,7 @@ class Cart {
     return cartData.items.length
   }
 
-   // * 订单页面需要
+   // * 订单页面需要 生成订单子项
   // 获取选中的商品的skuIds
   getCheckedSkuIds() {
     const cartData = this._getCartData()
@@ -286,7 +286,7 @@ class Cart {
     return skuId
 }
 
- // * 订单页面需要
+ // * 订单页面需要 生成订单子项
 // 通过skuId获取购物车该商品数量
 getSkuCountBySkuId(skuId) {
     const cartData = this._getCartData()

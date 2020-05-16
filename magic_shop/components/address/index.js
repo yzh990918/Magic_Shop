@@ -58,12 +58,12 @@ Component({
 
     async addAddresss(){
         const AuthorizedState = await this.hasAuthorizedAddress()
-        // 判断是否是undefined 说明没有经过过授权
+        console.log(AuthorizedState)
+        // 判断是否是deny 说明没有经过过授权
         if(AuthorizedState === AuthorizedStatus.DENY){
           this.setData({
             showDialog:true
           })
-          return 
         }
         this.getUserAddress()
     },

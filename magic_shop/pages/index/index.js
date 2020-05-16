@@ -3,6 +3,7 @@ import { Category } from '../../model/category'
 import { Banner } from '../../model/banner'
 import { Activity } from '../../model/activity'
 import { SpuPaging } from '../../model/Spu-paging'
+import { CouponType } from '../../core/enum'
 Page({
   data: {
     topThemeImg: null,
@@ -20,6 +21,7 @@ Page({
     this.getAllData()
     this.initBottomSpulist()
   },
+  // 初始化底部数据
   async initBottomSpulist() {
     const Paging = SpuPaging.getLatestPaging()
     this.data.SPaging = Paging
@@ -29,6 +31,8 @@ Page({
     }
     wx.lin.renderWaterFlow(data.items)
   },
+
+  // 获取所有数据
   async getAllData() {
     const theme = new Theme()
     await theme.getHomeThemes()
@@ -63,15 +67,7 @@ Page({
       themeD,
     })
   },
-  onReady: function () {
-    //Do some when page ready.
-  },
-  onShow: function () {
-    //Do some when page show.
-  },
-  onHide: function () {
-    //Do some when page hide.
-  },
+  // 触底触发
   async onReachBottom() {
     const data = await this.data.SPaging.getMoreData()
     // 如果没数据了 type=end
@@ -84,6 +80,13 @@ Page({
         LoadingType: 'end',
       })
     }
+  },
+  OnToCoupon(event){
+    const aName = event.currentTarget.dataset.aname
+    console.log(aName)
+    wx.navigateTo({
+      url: `/pages/coupon/index?aName=${aName}&type=${CouponType.ACITYITY}`
+    })
   },
   onUnload: function () {
     //Do some when page unload.

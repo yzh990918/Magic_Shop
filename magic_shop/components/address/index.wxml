@@ -12,10 +12,7 @@
         <view class="phone">{{address.telNumber}}</view>
       </view>
       <view class="address">
-        <text>{{address.provinceName}}</text>
-        <text>{{address.cityName}}</text>
-        <text>{{address.countyName}}</text>
-        <text>{{address.detailInfo}}</text>
+        <text>{{address.provinceName}}  </text>  <text>{{address.cityName}}  </text>  <text>{{address.countyName}}  </text>  <text>{{address.detailInfo}}</text>
       </view>
     </view>
     <view class="space"></view>

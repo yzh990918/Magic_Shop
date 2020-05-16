@@ -9,7 +9,7 @@
       </block>
     </swiper>
     <H-grid grid="{{grid}}"></H-grid>
-    <image class="activity" src="{{activity.entrance_img}}" />
+    <image data-aname="a-2" class="activity"  bind:tap="OnToCoupon" src="{{activity.entrance_img}}" />
     <H-scroll theme="{{themeB}}" spu-list="{{ThemeBSpuList}}"></H-scroll>
     <image class="themeC" src="{{themeC.entrance_img}}" />
     <H-hot-list hotlist="{{hotList}}"></H-hot-list>

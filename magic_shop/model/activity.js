@@ -8,6 +8,12 @@ class Activity{
       })
       return res.data
     }
+    static async getCounponsByActivityName(activityName){
+      const res = await Http.request({
+        url:`/activity/name/${activityName}/with_coupon`
+      })
+      return res.data
+    }
 }
 
 

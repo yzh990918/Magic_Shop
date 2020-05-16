@@ -6,7 +6,8 @@
     "pages/category/index",
     "pages/detail/index",
     "pages/search/index",
-    "pages/order/index"
+    "pages/order/index",
+    "pages/coupon/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -43,9 +44,10 @@
     "l-checkbox-group": "/miniprogram_npm/lin-ui/checkbox-group/index",
     "s-cart-item": "/components/cart-item/index",
     "s-empty": "/components/emptyPage/index",
-    "s-address":"/components/address/index",
-    "l-avatar":"/miniprogram_npm/lin-ui/avatar/index",
-    "l-list":"/miniprogram_npm/lin-ui/list/index"
+    "s-address": "/components/address/index",
+    "l-avatar": "/miniprogram_npm/lin-ui/avatar/index",
+    "l-list": "/miniprogram_npm/lin-ui/list/index",
+    "s-coupon-item":"/components/coupon-item/index"
   },
   "tabBar": {
     "borderStyle": "black",
