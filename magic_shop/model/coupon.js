@@ -9,6 +9,12 @@ class Coupon{
     })
     return res
   }
+  static async getMyAviableCoupons(){
+    const res = await Http.request({
+      url:'/coupon/myself/available/with_category'
+    })
+    return res.data
+  }
 }
 
 export{

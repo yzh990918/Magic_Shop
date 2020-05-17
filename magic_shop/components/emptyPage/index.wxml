@@ -1,3 +1,4 @@
+<!-- 通用空页面组件 -->
 <view class="container">
 <image class="img" src="../../imgs/imgs/empty.png" />
 <text class="text">{{text}}</text>

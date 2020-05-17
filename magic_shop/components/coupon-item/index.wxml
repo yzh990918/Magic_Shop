@@ -1,3 +1,5 @@
+<!-- 优惠券子项 -->
+
 <wxs src="../../wxs/coupon.wxs" module="s"></wxs>
 
 <view class="container bg-{{_status}}">

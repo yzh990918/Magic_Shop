@@ -1,3 +1,4 @@
+<!-- 快递信息 -->
 <view class="container">
   <view class="inner">
     <block wx:for="{{instaruction}}" wx:key="{{index}}">

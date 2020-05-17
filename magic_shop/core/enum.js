@@ -36,17 +36,32 @@ const HttpExceptionCode = {
   40006: '您已经领取过该优惠券',
 }
 
-//  CounponType
+//  优惠券的入口
 const CouponType = {
   ACITYITY: 'activity',
   CATEGORY: 'category',
 }
 
+// 优惠券状态
 const CouponStatus ={
   CAN_COLLECT : 0,
   AVALIABLE: 1,
   USED: 2,
   OVERDUE:3
+}
+
+// 优惠券类型
+const CouponsType = {
+  FULL_MINUS: 1,
+  FULL_OFF: 2,
+  NO_THRESHOLD_MINUS: 3
+}
+
+// picker 正选或反选
+
+const PickType = {
+  PICK:'pick',
+  UNPICK:"unpick"
 }
 export {
   CellStatus,
@@ -54,5 +69,7 @@ export {
   OrderExceptionType,
   HttpExceptionCode,
   CouponType,
-  CouponStatus
+  CouponStatus,
+  CouponsType,
+  PickType
 }

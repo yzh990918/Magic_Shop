@@ -1,3 +1,4 @@
+<!-- 核心sku选择面板 -->
 <wxs src="../../wxs/price.wxs" module="p"></wxs>
 <scroll-view class="container" scroll-y="{{true}}">
 <view class="inner-container">

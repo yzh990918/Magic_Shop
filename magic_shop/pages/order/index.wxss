@@ -1,1 +1,34 @@
 /* pages/order/index.wxss */
+
+.order-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+  background-color: #ffffff;
+  margin-top: 20rpx;
+}
+
+.price-view {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+
+.total,
+.discount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 24rpx;
+  color: #333333;
+}

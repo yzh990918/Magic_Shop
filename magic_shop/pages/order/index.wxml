@@ -2,4 +2,22 @@
 <view class="address-container">
 <s-address></s-address>
 </view>
+<view class="order-container">
+  <block wx:for="{{orderItems}}" wx:key="{{index}}">
+ <s-order-item orderItem="{{item}}"></s-order-item>
+  </block>
+</view>
+<view class="price-view">
+  <view class="total">
+    <text class="title">商品总价格</text>
+     <l-price size="25" color="#157658" l-class="price" value="{{finalTotalPrice}}"></l-price>
+  </view>
+  <view class="discount">
+    <text class="title">商品优惠价格</text>
+    <l-price size="25" color="#157658" l-class="price" value="{{discountMoney}}"></l-price>
+  </view>
+</view>
+<view class="coupon-picker-container">
+  <s-coupon-picker bind:checked="onChecked" counBoList="{{counBoList}}"></s-coupon-picker>
+</view>
 </view>

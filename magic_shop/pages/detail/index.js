@@ -113,6 +113,15 @@ Page({
         }
       })
     }
+    if(event.detail.orderWay === 'buy'){
+      const skuId = event.detail.sku.id
+      const count = event.detail.skuCount
+      const orderWay = event.detail.orderWay
+      wx.navigateTo({
+        url: `/pages/order/index?skuId=${skuId}&count=${count}&orderWay=${orderWay}`
+      })
+
+    }
   
   },
 

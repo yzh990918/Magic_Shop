@@ -31,7 +31,6 @@ Component({
       this.setData({
         _coupon:new CouponDate(coupon)
       })
-      console.log(this.data._coupon)
     }
   },
 

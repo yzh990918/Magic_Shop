@@ -1,3 +1,4 @@
+<!-- 二级分类宫格列表 -->
 <view class="container">
 <view class="banner">
   <image class="banner-img" src="{{bannerImg}}" />

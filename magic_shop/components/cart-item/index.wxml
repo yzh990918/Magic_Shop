@@ -1,3 +1,4 @@
+<!-- 购物车商品子项 -->
 <wxs src="../../wxs/price.wxs" module="p"></wxs>
 <wxs src="../../wxs/stock.wxs" module="s"></wxs>
 <l-slide-view wx:if="{{cartItem}}" height="220" width="750" slide-width="200">

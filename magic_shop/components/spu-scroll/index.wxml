@@ -1,3 +1,4 @@
+<!-- 横向滚动商品组件 -->
 <wxs src="../../wxs/price.wxs" module="p"></wxs>
 <view class="container">
   <image class="title-img" src="{{theme.title_img}}"></image>

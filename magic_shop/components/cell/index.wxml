@@ -1,3 +1,5 @@
+<!-- sku选择面板单个元素 -->
+
 <wxs src="../../wxs/status.wxs" module="c"></wxs>
 <view bind:tap="selectCell" class="container {{c.statusStyle(Cell.status).outer}}">
   <view class="inner {{c.statusStyle(Cell.status).inner}}">

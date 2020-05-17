@@ -1,3 +1,4 @@
+<!-- 六宫格 -->
 <view class="container">
   <l-grid row-num="3" l-class="grid-container">
     <block wx:for="{{grid}}" wx:key="{{index}}">

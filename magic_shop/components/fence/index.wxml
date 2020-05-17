@@ -1,3 +1,4 @@
+<!--一行规格值选择栅栏 -->
 <view class="container">
   <view class="title">{{fence.title}}</view>
   <view class="cell-container">
