@@ -1,11 +1,11 @@
 <!-- 横向滚动商品组件 -->
 <wxs src="../../wxs/price.wxs" module="p"></wxs>
 <view class="container">
-  <image class="title-img" src="{{theme.title_img}}"></image>
+  <image data-tname="t-2" bind:tap="toThemeB" class="title-img" src="{{theme.title_img}}"></image>
   <scroll-view scroll-x="{{true}}">
     <view class="inner">
       <block wx:for="{{spuList}}" wx:key="{{index}}">
-        <view class="item" hover-class="react-hover" hover-stay-time="500">
+        <view data-pid="{{item.id}}" bind:tap="GotoDetail" class="item" hover-class="react-hover" hover-stay-time="500">
           <image class="img" src="{{item.img}}" />
           <view class="desc">
             <view class="title">{{item.title}}</view>

@@ -1,19 +1,19 @@
 <l-loadmore show type="{{LoadingType}}" end-text="杨先生作品" line="{{true}}" color="#157658">
   <view slot="content">
-    <image  class="toptheme" src="{{topThemeImg.entrance_img}}"></image>
+    <image data-tname="t-1" bind:tap="toThemeA"  class="toptheme" src="{{topThemeImg.entrance_img}}"></image>
     <swiper class="swiper" circular="{{true}}" indicator-active-color="#157658" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}">
       <block wx:for="{{banner.items}}" wx:key="{{index}}" :key="{{index}}">
         <swiper-item>
-          <image class="swiper" src="{{item.img}}" />
+          <image data-type="{{item.type}}" data-keyword="{{item.keyword}}" bind:tap="onGotoBanner" class="swiper" src="{{item.img}}" />
         </swiper-item>
       </block>
     </swiper>
     <H-grid grid="{{grid}}"></H-grid>
     <image data-aname="a-2" class="activity"  bind:tap="OnToCoupon" src="{{activity.entrance_img}}" />
     <H-scroll theme="{{themeB}}" spu-list="{{ThemeBSpuList}}"></H-scroll>
-    <image class="themeC" src="{{themeC.entrance_img}}" />
+    <image data-tname="t-3" bind:tap="toThemeC" class="themeC" src="{{themeC.entrance_img}}" />
     <H-hot-list hotlist="{{hotList}}"></H-hot-list>
-    <image class="themeD" src="{{themeD.entrance_img}}" />
+    <image data-tname="t-4" bind:tap="toThemeD" class="themeD" src="{{themeD.entrance_img}}" />
     <view class="recommend">
       <view class="top">
         <image  class="top-img" src="../../imgs/home/title@interest.png"></image>

@@ -3,5 +3,6 @@
     "s-relam":"/components/realm/index",
     "s-tabBar":"/components/tabBar/index",
     "s-instruction":"/components/spu-instruction/index"
-  }
+  },
+  "navigationBarTitleText": "商品详情"
 }

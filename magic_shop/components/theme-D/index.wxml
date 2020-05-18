@@ -1,0 +1,27 @@
+<view class="container">
+  <image src="{{theme.internal_top_img}}" class="top-img" />
+  <block wx:for="{{theme.spu_list}}" wx:key="{{index}}">
+    <view class="spu-list" data-pid="{{item.id}}" bind:tap="GotoDetail">
+      <view class="left" wx:if="{{random[index] === -1}}">
+        <image src="{{item.img}}" class="spu-img"  mode="widthFix" />
+        <view class="desc">
+          <text class="title">{{item.title}}</text>
+          <text class="subtitle">{{item.subtitle}}</text>
+          <view class="btn">
+            <l-icon name="right" color="#ffffff" size="30"></l-icon>
+          </view>
+        </view>
+      </view>
+       <view class="right" wx:if="{{random[index] === 1}}">
+        <view class="desc">
+          <text class="title">{{item.title}}</text>
+          <text class="subtitle">{{item.subtitle}}</text>
+          <view class="btn">
+            <l-icon name="right" color="#ffffff" size="30"></l-icon>
+          </view>
+        </view>
+        <image src="{{item.img}}" mode="widthFix" class="spu-img-r" />
+      </view>
+    </view>
+  </block>
+</view>

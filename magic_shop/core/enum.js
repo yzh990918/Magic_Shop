@@ -63,6 +63,14 @@ const PickType = {
   PICK:'pick',
   UNPICK:"unpick"
 }
+
+// banner类型
+const BannerType= {
+  SPU:1,
+  THEME:3,
+  SPU_LIST:2
+  
+}
 export {
   CellStatus,
   AuthorizedStatus,
@@ -71,5 +79,6 @@ export {
   CouponType,
   CouponStatus,
   CouponsType,
-  PickType
+  PickType,
+  BannerType
 }

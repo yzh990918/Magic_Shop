@@ -1,0 +1,29 @@
+<l-skeleton 
+  loading="{{showLoading}}"
+  rows="{{rows}}"
+>
+<view class="container">
+  <!-- 折扣季 -->
+<s-theme-A wx:if="{{_tName == 'janna'}}" theme="{{_theme}}"></s-theme-A>
+<!-- 每周上新  -->
+<s-theme-B wx:if="{{_tName == null}}" theme="{{_theme}}"></s-theme-B>
+<!-- 甄选 -->
+<s-theme-C wx:if="{{_tName == 'diana'}}" theme="{{_theme}}"></s-theme-C>
+<!-- 时尚穿搭 -->
+<s-theme-D wx:if="{{_tName == 'irelia'}}" theme="{{_theme}}"></s-theme-D>
+<!-- 热门榜单 -->
+<s-theme-E wx:if="{{_tName == 'camille' }}" theme="{{_theme}}"></s-theme-E>
+
+<view class="more-recommend">
+  <view class="title" wx:if="{{_tName !== null}}" >
+     <image  class="top-img" src="../../imgs/home/title@interest.png"></image>
+  </view>
+  
+  <l-water-flow generic:l-water-flow-item="s-spu-waterflow"></l-water-flow>
+  <view class="logo-wrapper">
+    <image src="https://image.yangxiansheng.top/img/logo(已去底).png?imagelist" class="logo"/>
+  </view>
+</view>
+</view>
+</l-skeleton>
+

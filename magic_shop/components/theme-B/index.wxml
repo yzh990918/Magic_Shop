@@ -1,0 +1,9 @@
+<view class="container">
+  <image src="{{theme.internal_top_img}}" class="image" />
+  <view class="desc">
+    <text class="title-A">{{textA}}</text>
+    <text class="title-B">{{textB}}</text>
+      <text class="title-B">{{textC}}</text>
+  </view>
+  <l-water-flow generic:l-water-flow-item="s-spu-waterflow"></l-water-flow>
+</view>

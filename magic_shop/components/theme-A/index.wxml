@@ -1,0 +1,22 @@
+<view class="container">
+<image src="{{theme.internal_top_img}}" mode="widthFix" class="img" />
+<view class="desc">
+  <text class="title-A">{{textA}}</text>
+  <text class="title-A">{{textB}}</text>
+ 
+</view>
+
+<view class="spu-List">
+  <block wx:for="{{spuList}}" wx:key="{{index}}">
+    <view class="inner-container" data-pid="{{item.id}}" bind:tap="GotoDetail">
+      <image src="{{item.img}}" class="spu-image" />
+      <view class="info">
+        <text class="title">{{item.title}}</text>
+        <text class="subtitle">{{item.subtitle}}</text>
+        <l-price wx:if="{{!item.discount_price}}" value="{{item.price}}" size="30" color="#a92820"></l-price>
+         <l-price wx:else value="{{item.discount_price}}" size="30" color="#a92820"></l-price>
+      </view>
+    </view>
+  </block>
+</view>
+</view>

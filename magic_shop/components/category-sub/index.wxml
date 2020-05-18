@@ -3,10 +3,6 @@
 <view class="banner">
   <image class="banner-img" src="{{bannerImg}}" />
 </view>
-<view class="grid">
-  <view class="grid-text">
-  <text class="text-c" >-  全部分类  -</text>
-  </view>
 <l-grid row-num="3" l-class="grid-container">
     <block wx:for="{{subs}}" wx:key="{{index}}">
     <l-grid-item key="{{item.id}}" slot="{{item.id}}">
@@ -14,6 +10,8 @@
     class="grid-item"
     hover-class="react-hover"
     hover-stay-time="500"
+    data-cid="{{item.id}}"
+    bind:tap="onGotoSpuList"
     >
     <image mode="aspectFit" class="image" src="{{item.img}}" />
     <text class="text" >{{item.name}}</text>
@@ -21,5 +19,4 @@
     </l-grid-item>
     </block>
   </l-grid>
-</view>
 </view>

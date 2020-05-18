@@ -1,0 +1,20 @@
+<view class="container">
+  <image class="top-img" src="{{theme.internal_top_img}}" mode="widthFix" />
+  <view class="content">
+    <block wx:for="{{theme.spu_list}}">
+      <view class="inner-container">
+        <image src="{{item.img}}" class="spu-img" />
+        <view class="desc">
+          <text class="title">{{item.title}}</text>
+          <view class="option">
+            <l-price l-class="price" wx:if="{{!item.discount_price}}" value="{{item.price}}" size="30" color="#157658"></l-price>
+            <l-price wx:else value="{{item.discount_price}}" size="30" color="#157658"></l-price>
+            <view class="btn">
+              <l-button data-pid="{{item.id}}" bind:lintap="GotoDetail" shape="square" bg-color="#157658" width="176" height="64">立即购买</l-button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

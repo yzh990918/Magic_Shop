@@ -1,23 +1,39 @@
 <view class="container">
-<view class="address-container">
-<s-address></s-address>
-</view>
-<view class="order-container">
-  <block wx:for="{{orderItems}}" wx:key="{{index}}">
- <s-order-item orderItem="{{item}}"></s-order-item>
-  </block>
-</view>
-<view class="price-view">
-  <view class="total">
-    <text class="title">商品总价格</text>
-     <l-price size="25" color="#157658" l-class="price" value="{{finalTotalPrice}}"></l-price>
+  <view class="address-container">
+    <s-address></s-address>
   </view>
-  <view class="discount">
-    <text class="title">商品优惠价格</text>
-    <l-price size="25" color="#157658" l-class="price" value="{{discountMoney}}"></l-price>
+  <view class="order-container">
+    <block wx:for="{{orderItems}}" wx:key="{{index}}">
+      <s-order-item orderItem="{{item}}"></s-order-item>
+    </block>
+  </view>
+  <view class="price-view">
+    <view class="total">
+      <text class="title">商品总价格</text>
+      <l-price size="25" color="#157658" l-class="price" value="{{finalTotalPrice}}"></l-price>
+    </view>
+    <view class="discount">
+      <text class="title">商品优惠价格</text>
+      <l-price size="25" color="#E22018" l-class="price" value="{{discountMoney}}"></l-price>
+    </view>
+  </view>
+  <view class="coupon-picker-container">
+    <s-coupon-picker bind:checked="onChecked" counBoList="{{counBoList}}"></s-coupon-picker>
+  </view>
+  <view class="bottom-button">
+  <view class="price-wrapper">
+   <view class="text">合计</view>
+    <l-price size="32" color="#157658" l-class="price" value="{{finalTotalPrice}}"></l-price>
+  </view>
+    <l-button bind:lintap="onSubmit" shape="square" bg-color="#157658" width="200" height="88">提交订单</l-button>
   </view>
 </view>
-<view class="coupon-picker-container">
-  <s-coupon-picker bind:checked="onChecked" counBoList="{{counBoList}}"></s-coupon-picker>
-</view>
-</view>
+
+<l-dialog type="alert" title="提示" l-title-class="dialog-title" show="{{containsTest}}" l-confirm-class="dialog-confirm">
+    <view class="dialog-content">
+        <text> 当前订单只是演示数据，无法支付</text>
+        <text> 这一步提交订单需要调用支付接口</text>
+        <text> 微信支付需要工商营业执照，支付臣妾实在没办法做到</text>
+        <text> 抱歉</text>
+    </view>
+</l-dialog>

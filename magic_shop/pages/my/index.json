@@ -2,5 +2,6 @@
   "usingComponents": {
     "s-my-banner":"/components/user-banner/index",
     "s-order-panel":"/components/order-panel/index"
-  }
+  },
+  "navigationBarTitleText": "我的"
 }

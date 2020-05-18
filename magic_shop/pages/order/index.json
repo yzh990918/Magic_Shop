@@ -2,5 +2,6 @@
   "usingComponents": {
     "s-coupon-picker":"/components/coupon-picker/index",
     "s-order-item":"/components/order-skuItem/index"
-  }
+  },
+  "navigationBarTitleText": "订单"
 }

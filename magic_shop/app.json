@@ -7,12 +7,14 @@
     "pages/detail/index",
     "pages/search/index",
     "pages/order/index",
-    "pages/coupon/index"
+    "pages/coupon/index",
+    "pages/theme/index",
+    "pages/spu-list/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "墨痕",
+    "navigationBarTitleText": "解忧杂货店",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
@@ -47,9 +49,15 @@
     "s-address": "/components/address/index",
     "l-avatar": "/miniprogram_npm/lin-ui/avatar/index",
     "l-list": "/miniprogram_npm/lin-ui/list/index",
-    "s-coupon-item":"/components/coupon-item/index",
-    "l-radio-group":"/miniprogram_npm/lin-ui/radio-group/index",
-    "l-radio":"/miniprogram_npm/lin-ui/radio/index"
+    "s-coupon-item": "/components/coupon-item/index",
+    "l-radio-group": "/miniprogram_npm/lin-ui/radio-group/index",
+    "l-radio": "/miniprogram_npm/lin-ui/radio/index",
+    "s-theme-A": "/components/theme-A/index",
+    "s-theme-B": "/components/theme-B/index",
+    "s-theme-C": "/components/theme-C/index",
+    "s-theme-D": "/components/theme-D/index",
+    "s-theme-E": "/components/theme-E/index",
+    "l-skeleton": "/miniprogram_npm/lin-ui/skeleton/index"
   },
   "tabBar": {
     "borderStyle": "black",

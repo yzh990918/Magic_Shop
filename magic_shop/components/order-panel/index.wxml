@@ -11,7 +11,7 @@
     </view>
     <view class="icon-item">
       <l-icon name="paid" l-class="sleeve" ></l-icon>
-      <text>已支付</text>
+      <text>代发货</text>
     </view>
     <view class="icon-item">
       <l-icon name="delivered" l-class="sleeve" ></l-icon>

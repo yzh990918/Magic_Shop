@@ -1,10 +1,10 @@
-// components/grid/index.js
+// components/theme-E/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    grid:Array
+    theme:Object
   },
 
   /**
@@ -18,10 +18,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    OnGotoSpuList(event){
-      const cid = event.currentTarget.dataset.cid
+    GotoDetail(event){
+      const pid = event.currentTarget.dataset.pid
       wx.navigateTo({
-        url: `/pages/spu-list/index?cid=${cid}&isroot=true`
+        url: `/pages/detail/index?pid=${pid}`
       })
     }
 

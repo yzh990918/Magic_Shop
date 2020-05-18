@@ -1,0 +1,25 @@
+/* components/theme-B/index.wxss */
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.image{
+  width: 100%;
+  height: 360rpx;
+}
+.desc {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 10rpx 0 40rpx 30rpx;
+  color: #7e7e7e;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  background-color: #ffffff;
+}
+.title-A{
+  margin-bottom: 30rpx;
+}

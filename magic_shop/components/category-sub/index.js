@@ -19,6 +19,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onGotoSpuList(event){
+      const cid = event.currentTarget.dataset.cid
+      wx.navigateTo({
+        url: `/pages/spu-list/index?cid=${cid}&isroot=false`
+      })
+
+    }
 
   }
 })

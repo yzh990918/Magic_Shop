@@ -83,11 +83,34 @@ Page({
   },
   OnToCoupon(event){
     const aName = event.currentTarget.dataset.aname
-    console.log(aName)
     wx.navigateTo({
       url: `/pages/coupon/index?aName=${aName}&type=${CouponType.ACITYITY}`
     })
   },
+  toThemeA(event){
+    const tName  = event.currentTarget.dataset.tname 
+    wx.navigateTo({
+      url: `/pages/theme/index?tName=${tName}`
+    }) 
+  },
+  toThemeC(event){
+    const tName  = event.currentTarget.dataset.tname 
+    wx.navigateTo({
+      url: `/pages/theme/index?tName=${tName}`
+    }) 
+  },
+  toThemeD(event){
+    const tName  = event.currentTarget.dataset.tname 
+    wx.navigateTo({
+      url: `/pages/theme/index?tName=${tName}`
+    }) 
+  },
+  onGotoBanner(event){
+    const keyword = event.currentTarget.dataset.keyword
+    const type = event.currentTarget.dataset.type
+    Banner.OnGotoBanner(keyword,type)
+  },
+  
   onUnload: function () {
     //Do some when page unload.
   },

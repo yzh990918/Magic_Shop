@@ -1,29 +1,29 @@
-// components/grid/index.js
+// components/theme-C/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    grid:Array
+    theme: Object,
   },
-
+  observers: {
+  },
   /**
    * 组件的初始数据
    */
   data: {
-
+    tags: Array,
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    OnGotoSpuList(event){
-      const cid = event.currentTarget.dataset.cid
+    toDetail(event){
+      const pid = event.currentTarget.dataset.pid
       wx.navigateTo({
-        url: `/pages/spu-list/index?cid=${cid}&isroot=true`
+        url: `/pages/detail/index?pid=${pid}`
       })
     }
-
-  }
+  },
 })

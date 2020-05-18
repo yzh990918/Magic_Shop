@@ -33,7 +33,6 @@ Page({
    */
   onShow: function () {
     const cartItems = cart.getLocalCartData().items
-    console.log(cart.isEmpty())
     if (cart.isEmpty()) {
       this.isEmpty()
       return
@@ -92,7 +91,7 @@ Page({
   },
 
   // 判断是否全选
-  isAllChecked(){
+  isAllChecked() {
     if (cart.isAllChecked()) {
       this.setData({
         allChecked: true,
@@ -114,5 +113,19 @@ Page({
       totalPrice: cart.checkedPrice,
       totalCount: cart.checkedCount,
     })
+  },
+  onSettle() {
+    const checkednums = cart.getCheckedItems()
+    if (!checkednums.length) {
+      wx.lin.showToast({
+        title: '至少选择一件商品',
+        icon: 'error',
+      })
+      return
+    } else {
+      wx.navigateTo({
+        url: '/pages/order/index',
+      })
+    }
   },
 })

@@ -1,0 +1,8 @@
+/* pages/spu-list/index.wxss */
+.container{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+  background-color: #ffffff;
+  
+}

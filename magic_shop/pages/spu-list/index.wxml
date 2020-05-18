@@ -1,0 +1,10 @@
+<l-skeleton 
+  loading="{{showLoading}}"
+  rows="{{rows}}"
+>
+<view class="container">
+  <l-water-flow generic:l-water-flow-item="s-spu-waterflow"></l-water-flow>
+</view>
+</l-skeleton>
+
+ <l-status-show l-class="status" full-screen="{{true}}" type="data" show="{{status}}"></l-status-show>
