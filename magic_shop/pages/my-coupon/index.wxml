@@ -1,0 +1,16 @@
+<l-tabs inactive-color="#666666" l-line-class="line" l-class-content="content" placement="top" active-color="#157658" active-key="{{activeKey}}" bind:linchange="changeTabs" swipeable has-line="{{true}}">
+  <l-tabpanel tab="可使用" key="1" slot="1">
+    <l-status-show describe="暂时没有优惠券信息哦~" l-class="status" full-screen="{{false}}" type="product" show="{{showTag}}"></l-status-show>
+  </l-tabpanel>
+  <l-tabpanel tab="已使用" key="2" slot="2">
+    <l-status-show describe="暂时没有优惠券信息哦~" l-class="status" full-screen="{{false}}" type="product" show="{{showTag}}"></l-status-show>
+  </l-tabpanel>
+  <l-tabpanel tab="已过期" key="3" slot="3">
+    <l-status-show describe="暂时没有优惠券信息哦~" l-class="status" full-screen="{{false}}" type="product" show="{{showTag}}"></l-status-show>
+  </l-tabpanel>
+</l-tabs>
+<view class="container">
+  <block wx:for="{{Coupons}}" wx:key="{{index}}">
+    <s-coupon-item coupon="{{item}}" status="{{status}}"></s-coupon-item>
+  </block>
+</view>

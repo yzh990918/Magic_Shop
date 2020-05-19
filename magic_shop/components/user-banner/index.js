@@ -47,6 +47,11 @@ Component({
       })
   }
      
+    },
+    toCoupon(){
+      wx.navigateTo({
+        url: '/pages/my-coupon/index'
+      })
     }
 
   }

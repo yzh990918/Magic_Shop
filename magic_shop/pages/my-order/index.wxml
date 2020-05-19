@@ -1,0 +1,42 @@
+<l-tabs inactive-color="#666666" l-line-class="line" l-class-content="content" placement="top" active-color="#157658" active-key="{{activeKey}}" bind:linchange="changeTabs" swipeable has-line="{{true}}">
+  <l-tabpanel tab="全部订单" key="1" slot="1">
+    <l-status-show describe="暂时没有订单信息哦~" l-class="status" full-screen="{{false}}" type="order" show="{{showTag}}"></l-status-show>
+      <view class="content">
+    <block wx:for="{{orderItems}}" wx:key="{{index}}">
+      <l-order-items order="{{item}}"></l-order-items>
+    </block>
+  </view>
+  </l-tabpanel>
+  <l-tabpanel tab="待支付" key="2" slot="2">
+    <l-status-show describe="暂时没有订单信息哦~" l-class="status" full-screen="{{false}}" type="order" show="{{showTag}}"></l-status-show>
+      <view class="content">
+    <block wx:for="{{orderItems}}" wx:key="{{index}}">
+      <l-order-items order="{{item}}"></l-order-items>
+    </block>
+  </view>
+  </l-tabpanel>
+  <l-tabpanel tab="代发货" key="3" slot="3">
+    <l-status-show describe="暂时没有订单信息哦~" l-class="status" full-screen="{{false}}" type="order" show="{{showTag}}"></l-status-show>
+      <view class="content">
+    <block wx:for="{{orderItems}}" wx:key="{{index}}">
+      <l-order-items order="{{item}}"></l-order-items>
+    </block>
+  </view>
+  </l-tabpanel>
+    <l-tabpanel tab="待收货" key="4" slot="4">
+    <l-status-show describe="暂时没有订单信息哦~" l-class="status" full-screen="{{false}}" type="order" show="{{showTag}}"></l-status-show>
+      <view class="content">
+    <block wx:for="{{orderItems}}" wx:key="{{index}}">
+      <l-order-items order="{{item}}"></l-order-items>
+    </block>
+  </view>
+  </l-tabpanel>
+     <l-tabpanel tab="已完成" key="5" slot="5">
+    <l-status-show describe="暂时没有订单信息哦~" l-class="status" full-screen="{{false}}" type="order" show="{{showTag}}"></l-status-show>
+      <view class="content">
+    <block wx:for="{{orderItems}}" wx:key="{{index}}">
+      <l-order-items order="{{item}}"></l-order-items>
+    </block>
+  </view>
+  </l-tabpanel>
+</l-tabs>

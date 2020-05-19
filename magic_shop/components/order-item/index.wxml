@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="inner-container">
+    <view class="title">
+      <text class="no">订单编号: {{OrderView.order_no}} </text>
+      <view class="status">{{OrderView.status}}</view>
+    </view>
+    <view class="content">
+      <image src="{{OrderView.img}}" class="img" />
+      <view class="desc">
+        <text class="title">{{OrderView.title}}</text>
+        <text class="num">共{{OrderView.count}}件商品</text>
+      </view>
+    </view>
+    <view class="bottom">
+      <text class="paid-time">下单时间: {{OrderView.paid_time}}</text>
+      <view class="price-wrapper">
+        <text>实际支付:     </text>
+        <l-price l-class="price" size="28" color="#157658" value="{{OrderView.price}}"></l-price>
+      </view>
+    </view>
+
+  </view>
+</view>

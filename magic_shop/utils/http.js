@@ -21,9 +21,9 @@ class Http {
   // * refetch 是否开启二次重刷token throwError 是否抛出异常
   static async request({
     url,
-    data,
+    data = {},
     method="GET",
-    refetch = true,
+    noRefetch = false,
     throwError = false
   }){
     let res
@@ -54,7 +54,7 @@ class Http {
     }else{
       if(HttpCode === '401'){
         // 触发二次重刷token
-          if (refetch) {
+          if (!noRefetch) {
             return Http._refetch({
               url,
               data,
@@ -68,21 +68,18 @@ class Http {
         }
         if(HttpCode === '404'){
           // 通常404 不会抛出异常
-          if(res.data.code !==undefined){
-            return null
-          }
-          return res.data
+          return isArray ? []:null
         }
 
         //*  异常抛出时(这里是前端的error_code码 并不是后端的code码) 加入提示 
-        const error_code = res.data.errorCode
+        const error_code = res.data.error_code
         Http.showError(error_code,res.data)
       }
     }
     
   }
   // 二次重刷
-  async _refetch(data){
+  static async _refetch(data){
     const token = new Token()
     await token.getTokenFromServer()
     data.refetch = false

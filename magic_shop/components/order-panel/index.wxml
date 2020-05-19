@@ -5,19 +5,19 @@
     <text>我的订单</text>
   </view>
   <view class="item-row">
-    <view class="icon-item">
+    <view data-key="unpaid" bind:tap="OnToOrderDetail"  class="icon-item">
       <l-icon name="unpaid" l-class="sleeve" ></l-icon>
       <text>待支付</text>
     </view>
-    <view class="icon-item">
+    <view data-key="2" bind:tap="OnToOrderDetail" class="icon-item">
       <l-icon name="paid" l-class="sleeve" ></l-icon>
       <text>代发货</text>
     </view>
-    <view class="icon-item">
+    <view data-key="3" bind:tap="OnToOrderDetail" class="icon-item">
       <l-icon name="delivered" l-class="sleeve" ></l-icon>
       <text>待收货</text>
     </view>
-    <view class="icon-item">
+    <view data-key="4" bind:tap="OnToOrderDetail" class="icon-item">
       <l-icon name="over" l-class="sleeve" ></l-icon>
       <text>已完成</text>
     </view>

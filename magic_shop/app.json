@@ -9,7 +9,12 @@
     "pages/order/index",
     "pages/coupon/index",
     "pages/theme/index",
-    "pages/spu-list/index"
+    "pages/spu-list/index",
+    "pages/about/index",
+    "pages/my-order/index",
+    "pages/my-coupon/index",
+    "pages/log/index",
+    "pages/notice/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -57,7 +62,10 @@
     "s-theme-C": "/components/theme-C/index",
     "s-theme-D": "/components/theme-D/index",
     "s-theme-E": "/components/theme-E/index",
-    "l-skeleton": "/miniprogram_npm/lin-ui/skeleton/index"
+    "l-skeleton": "/miniprogram_npm/lin-ui/skeleton/index",
+    "l-tabs": "/miniprogram_npm/lin-ui/tabs/index",
+    "l-tabpanel": "/miniprogram_npm/lin-ui/tabpanel/index"
+   
   },
   "tabBar": {
     "borderStyle": "black",

@@ -39,11 +39,15 @@ function getSlashYMDHMS(dateStr) {
   const date = toDate(dateStr)
   return date.format('yyyy/MM/dd hh:mm:ss')
 }
-
+function GetSlashYMDHMS(dateStr) {
+  const date = toDate(dateStr)
+  return date.format('yyyy-MM-dd hh:mm:ss')
+}
 
 export {
   toDate,
   getSlashYMD,
   getDotYMD,
-  getSlashYMDHMS
+  getSlashYMDHMS,
+  GetSlashYMDHMS
 }

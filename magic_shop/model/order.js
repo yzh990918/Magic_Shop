@@ -1,6 +1,7 @@
 import { OrderException } from "../core/order-exception"
 import { OrderExceptionType } from "../core/enum"
 import { accAdd } from "../utils/Number"
+import { Paging } from "../utils/paging"
 
 class Order{
   orderItems
@@ -76,6 +77,19 @@ class Order{
     }else{
       return false
     }
+  }
+
+  // 获取全部  未发货 已发货 以完成的订单信息
+  static getOrderPaging(status){
+    return new Paging({
+      url:`/order/by/status/${status}`
+    },10)
+  }
+  //未支付 
+  static getUnpaidPaging(){
+    return new Paging({
+      url:`/order/status/unpaid`
+    },10)
   }
 }
 

@@ -1,13 +1,20 @@
 <view class="container">
-  <s-my-banner counpons="3"></s-my-banner>
+  <s-my-banner coupons="{{couponsNums}}"></s-my-banner>
   <s-order-panel></s-order-panel>
   <view class="list-wrapper">
-    <l-list  title="全部订单" tag-color="#157658" gap="40" icon="order1" l-icon-class="sleeve"  />
-    <l-list title="收货地址"  tag-color="#157658" gap="40" icon="address2" l-icon-class="sleeve" />
-    <l-list title="优惠券"  tag-color="#157658" gap="40" icon="coupon" l-icon-class="sleeve" />
-    <l-list title="消息"  tag-color="#157658" gap="40" icon="notification" l-icon-class="icons"  />
-    <l-list title="开发日志" l-icon-class="icons"  tag-color="#157658" gap="40" icon="order"  />
-    <l-list title="赞赏作者" l-icon-class="icons"  tag-color="#157658" gap="40" icon="user"  />
-     <l-list title="分享" l-icon-class="icons"  tag-color="#157658" gap="40" icon="share"  />
+    <l-list title="全部订单" bind:lintap="toOrderDetail" tag-color="#157658" gap="40" icon="order1" l-icon-class="sleeve" />
+    <l-list title="收货地址" bind:lintap="toAddress" tag-color="#157658" gap="40" icon="address2" l-icon-class="sleeve" />
+    <l-list title="优惠券" bind:lintap="toMyCoupon" tag-color="#157658" gap="40" icon="coupon" l-icon-class="sleeve" />
+    <l-list title="消息" bind:lintap="toNotice" tag-color="#157658" gap="40" icon="notification" l-icon-class="icons" />
+    <l-list title="开发日志" bind:lintap="toLog" l-icon-class="icons" tag-color="#157658" gap="40" icon="order" />
+    <l-list title="赞赏作者" bind:lintap="toDonate" l-icon-class="icons" tag-color="#157658" gap="40" icon="user" />
+    <l-button l-class="btn" bg-color="#ffffff" size="long" special="{{true}}" open-type="share">
+      <view class="left">
+        <l-icon color="#157658"  size="32" name="share" />
+        <text>分享</text>
+      </view>
+      <l-icon l-class="right" name="right" size="26" color="#8c98ae" />
+    </l-button>
   </view>
+<l-dialog content-color="#333333" confirm-color="#157658" title-color="#157658" bind:linconfirm="onDialogConfirm" show="{{showDialog}}" content="《解忧杂货店》请求获取您的收货地址" title="授权"></l-dialog>
 </view>

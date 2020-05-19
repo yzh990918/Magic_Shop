@@ -15,3 +15,25 @@
   font-style: normal;
   color: #157658 !important;
 }
+.btn{
+  margin-left: 40rpx!important;
+  display: flex;
+  height: 88rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.left{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn text{
+  color: #333;
+  display: block;
+  margin-left: 20rpx !important;
+  font-size: 28rpx !important;
+}
+.right{
+  padding-right: 40rpx!important;
+}
+

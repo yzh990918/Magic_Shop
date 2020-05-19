@@ -4,5 +4,5 @@
   box-sizing: border-box;
   padding: 30rpx;
   background-color: #ffffff;
-  
+  overflow: hidden
 }

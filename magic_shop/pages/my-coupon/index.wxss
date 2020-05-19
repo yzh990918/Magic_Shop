@@ -1,0 +1,19 @@
+.line{
+  max-width: 40rpx;
+  height: 4rpx;
+}
+.container{
+  position: absolute;
+  top: 130rpx;
+  left: 32rpx;
+}
+.content{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+  .status{
+    width: 750rpx!important;
+    height: 100%!important;
+  }
+  

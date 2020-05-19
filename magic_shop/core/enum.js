@@ -43,33 +43,42 @@ const CouponType = {
 }
 
 // 优惠券状态
-const CouponStatus ={
-  CAN_COLLECT : 0,
+const CouponStatus = {
+  CAN_COLLECT: 0,
   AVALIABLE: 1,
   USED: 2,
-  OVERDUE:3
+  OVERDUE: 3,
 }
 
 // 优惠券类型
 const CouponsType = {
   FULL_MINUS: 1,
   FULL_OFF: 2,
-  NO_THRESHOLD_MINUS: 3
+  NO_THRESHOLD_MINUS: 3,
 }
 
 // picker 正选或反选
 
 const PickType = {
-  PICK:'pick',
-  UNPICK:"unpick"
+  PICK: 'pick',
+  UNPICK: 'unpick',
 }
 
 // banner类型
-const BannerType= {
-  SPU:1,
-  THEME:3,
-  SPU_LIST:2
-  
+const BannerType = {
+  SPU: 1,
+  THEME: 3,
+  SPU_LIST: 2,
+}
+
+// 订单种类 全部 未支付 未发货 已发货 完成
+
+const OrderType = {
+  ALL: 0,
+  UNPAID: 'unpaid',
+  UNSHIPPED: 2,
+  SHIPED: 3,
+  FINISH: 4,
 }
 export {
   CellStatus,
@@ -80,5 +89,6 @@ export {
   CouponStatus,
   CouponsType,
   PickType,
-  BannerType
+  BannerType,
+  OrderType,
 }

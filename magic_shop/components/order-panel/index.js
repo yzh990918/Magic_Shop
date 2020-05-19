@@ -18,6 +18,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    OnToOrderDetail(event){
+      const key = event.currentTarget.dataset.key
+      wx.navigateTo({
+        url: `/pages/my-order/index?key=${key}`
+      })
+    }
 
   }
 })

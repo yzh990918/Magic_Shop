@@ -8,7 +8,7 @@
       </l-button>
     </view>
     <view class="bottom-about">
-      <view class="left">
+      <view bind:tap="toCoupon"  class="left">
         <view class="num">{{coupons}}</view>
         <view class="desc"><text>优惠券</text></view>
       </view>

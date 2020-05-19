@@ -1,3 +1,8 @@
+import { Coupon } from "../../model/coupon"
+import { Address } from "../../model/address"
+import { promisic } from "../../miniprogram_npm/lin-ui/utils/util"
+import { AuthorizedStatus } from "../../core/enum"
+
 // pages/my/index.js
 Page({
 
@@ -5,13 +10,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    couponsNums:0,
+    showDialog:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
+    const coupons = await Coupon.getMyAviableCoupons()
+    this.setData({
+      couponsNums:coupons.length
+    })
 
   },
 
@@ -22,6 +32,33 @@ Page({
 
   },
 
+  async toAddress(){
+    const setting = await promisic(wx.getSetting)()
+    const address = setting.authSetting['scope.address']
+    if(address === false){
+      this.setData({
+        showDialog:true
+      })
+    }
+    console.log("chooseAddress")
+    await promisic(wx.chooseAddress)()
+  },
+  onDialogConfirm(){
+    wx.openSetting()
+  },
+
+  toMyCoupon(){
+    wx.navigateTo({
+      url: '/pages/my-coupon/index'
+    })
+
+  },
+
+  toOrderDetail(){
+    wx.navigateTo({
+      url: '/pages/my-order/index?key=0'
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

@@ -15,6 +15,12 @@ class Coupon{
     })
     return res.data
   }
+  static async getMyCouponsByStatus(status){
+    const res = await Http.request({
+      url:`/coupon/myself/by/status/${status}`
+    })
+    return res.data
+  }
 }
 
 export{

@@ -1,0 +1,5 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-order-items":"/components/order-item/index"
+}}
