@@ -1,21 +1,21 @@
-import { Spu } from "../../model/spu"
-import { SpuInstruction } from "../../model/Spu-instruction"
-import { getWindowHeight } from "../../utils/system"
-import { cartItem } from "../../model/cart-item"
-import { Cart } from "../../model/cart"
+import { Spu } from '../../model/spu'
+import { SpuInstruction } from '../../model/Spu-instruction'
+import { getWindowHeight } from '../../utils/system'
+import { cartItem } from '../../model/cart-item'
+import { Cart } from '../../model/cart'
 // pages/detail/index.js
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    spu:null,
-    showFlag:false,
-    tags:[],
-    spec:null,
-    instaruction:[],
-    h:0,
-    cartItemsCount:0
+    spu: null,
+    showFlag: false,
+    tags: [],
+    spec: null,
+    instaruction: [],
+    h: 0,
+    cartItemsCount: 0,
   },
 
   /**
@@ -26,83 +26,91 @@ Page({
     const pid = options.pid
     const spu = await Spu.getSpudetail(pid)
     this.setData({
-      spu
+      spu,
     })
     this.setTags()
     this.getSpuInstruction()
     this.setScrollViewHeight()
   },
-  async setScrollViewHeight(){
-    const height = await getWindowHeight() - 100
+  async setScrollViewHeight() {
+    const height = (await getWindowHeight()) - 100
     const cart = new Cart()
     this.setData({
-      h:height,
-      cartItemsCount:cart.getCartSkuNums()
+      h: height,
+      cartItemsCount: cart.getCartSkuNums(),
     })
   },
-  async getSpuInstruction(){
-    const data=await SpuInstruction.getSpuInstruction()
-    const instaruction = data.map(item=>item.text)
+  async getSpuInstruction() {
+    const data = await SpuInstruction.getSpuInstruction()
+    const instaruction = data.map((item) => item.text)
     this.setData({
-      instaruction
+      instaruction,
     })
   },
-  setTags(){
+  setTags() {
     const spu = this.data.spu
-    if(!spu){
+    if (!spu) {
       return
     }
-    if(!spu.tags){
+    if (!spu.tags) {
       return
     }
     const tags = spu.tags.split('$')
     this.setData({
-      tags
+      tags,
     })
   },
-  backHome(){
+  backHome() {
     wx.switchTab({
-      url: '/pages/index/index'
+      url: '/pages/index/index',
     })
   },
-  toCart(){
+  toCart() {
     wx.switchTab({
-      url: '/pages/cart/index'
+      url: '/pages/cart/index',
     })
   },
-  showRealm(){
+  showRealm() {
     this.setData({
-      showFlag:true,
-      orderWay:'cart'
+      showFlag: true,
+      orderWay: 'cart',
     })
   },
-  specChange(event){
+  specChange(event) {
     const spec = event.detail
     this.setData({
-      spec
+      spec,
     })
   },
-  buygoods(){
+  buygoods() {
     this.setData({
-      showFlag:true,
-      orderWay:'buy'
+      showFlag: true,
+      orderWay: 'buy',
     })
   },
-  showRealm(){
+  showRealm() {
     this.setData({
-      showFlag:true,
-      orderWay:'cart'
+      showFlag: true,
+      orderWay: 'cart',
+    })
+  },
+  previewImage(event) {
+    const cursrc=event.currentTarget.dataset.cursrc
+    const ImagList = this.data.spu.spu_img_list.map(item=>item.img)
+    wx.previewImage({
+      current: cursrc, // 当前显示图片的http链接
+      urls:ImagList // 需要预览的图片http链接列表
     })
   },
 
   // 接收控制器传来的商品信息
-  onShopping(event){
-    if(event.detail.orderWay === 'cart'){
-      const CartItem = new cartItem(event.detail.sku,event.detail.skuCount) 
+  onShopping(event) {
+    if (event.detail.orderWay === 'cart') {
+      const CartItem = new cartItem(event.detail.sku, event.detail.skuCount)
       const cart = new Cart()
       cart.addItem(CartItem)
       this.setData({
-        showFlag:false
+        showFlag: false,
       })
       this.refreshNum()
       wx.lin.showToast({
@@ -110,27 +118,24 @@ Page({
         icon: 'success',
         success: (res) => {
           console.log(res)
-        }
+        },
       })
     }
-    if(event.detail.orderWay === 'buy'){
+    if (event.detail.orderWay === 'buy') {
       const skuId = event.detail.sku.id
       const count = event.detail.skuCount
       const orderWay = event.detail.orderWay
       wx.navigateTo({
-        url: `/pages/order/index?skuId=${skuId}&count=${count}&orderWay=${orderWay}`
+        url: `/pages/order/index?skuId=${skuId}&count=${count}&orderWay=${orderWay}`,
       })
-
     }
-  
   },
 
-  refreshNum(){
+  refreshNum() {
     const cart = new Cart()
     console.log(cart.getCartSkuNums())
     this.setData({
-      cartItemsCount: cart.getCartSkuNums()
+      cartItemsCount: cart.getCartSkuNums(),
     })
-
-  }
+  },
 })

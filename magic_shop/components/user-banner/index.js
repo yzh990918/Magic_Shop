@@ -52,6 +52,11 @@ Component({
       wx.navigateTo({
         url: '/pages/my-coupon/index'
       })
+    },
+    GotoAbout(){
+      wx.navigateTo({
+        url: '/pages/about/index'
+      })
     }
 
   }

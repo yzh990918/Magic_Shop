@@ -16,7 +16,7 @@
         <view class="desc">
           <text class="title">{{item.title}}</text>
           <text class="subtitle">{{item.subtitle}}</text>
-          <view class="btn">
+          <view class="btn" data-pid="{{item.id}}" bind:tap="GotoDetail">
             <l-icon name="right" color="#ffffff" size="30"></l-icon>
           </view>
         </view>

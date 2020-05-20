@@ -10,7 +10,7 @@ Component({
    */
   properties: {
     spu: Object,
-    orderWay:String
+    orderWay: String,
   },
   observers: {
     spu: function (spu) {
@@ -38,7 +38,7 @@ Component({
     price: String,
     discountPrice: String,
     stock: String,
-    count:Cart.MIN_LENGTH
+    count: Cart.MIN_LENGTH,
   },
 
   /**
@@ -46,14 +46,14 @@ Component({
    */
   methods: {
     // 选择联动
-    triggerSpec(){
+    triggerSpec() {
       const NoSpec = Spu.isNoSpec(this.properties.spu)
-      if(NoSpec){
-        this.triggerEvent('specchange',{
-          NoSpec
+      if (NoSpec) {
+        this.triggerEvent('specchange', {
+          NoSpec,
         })
-      }else{
-        this.triggerEvent('specchange',{
+      } else {
+        this.triggerEvent('specchange', {
           NoSpec,
           isSkuIntact: this.data.judger.SkuPending.isIntact(),
           CurrentValues: this.data.judger.SkuPending.getCurrentSpecValue(),
@@ -63,62 +63,60 @@ Component({
     },
     // 点击加入购物车按钮或者立即购买
     shopping() {
-      if(Spu.isNoSpec(this.properties.spu)){
+      if (Spu.isNoSpec(this.properties.spu)) {
         const sku = this.properties.spu.sku_list[0]
         this.triggerSpuEvent(sku)
         return
       }
-        this.shopingHasSpec()
+      this.shopingHasSpec()
     },
 
-// 辅助函数 抛出添加购物车的商品信息
-triggerSpuEvent (sku) {
-  this.triggerEvent("shopping",{
-    orderWay:this.properties.orderWay,
-    spuID: this.properties.spu.id,
-    sku,
-    skuCount:this.data.count
-  })
-},
-// 购买与规格商品
-shopingHasSpec(){
-  if(!this.data.isSkuIntact){
-    const missKeys = this.data.judger.getMissingKeys()
-    wx.showToast({
-      title: `请选择${missKeys.join(',')}`,
-      icon: 'none',
-      duration:3000
-    })
-    return
-  }
-  this.triggerSpuEvent(this.data.judger.getDetermineSku())
-},
-
-
-    // 判断是否无货 监听数量选择
-    onTapcount(e){
-      const count = e.detail.count
-      this.setData({
-        count
+    // 辅助函数 抛出添加购物车的商品信息
+    triggerSpuEvent(sku) {
+      this.triggerEvent('shopping', {
+        orderWay: this.properties.orderWay,
+        spuID: this.properties.spu.id,
+        sku,
+        skuCount: this.data.count,
       })
-      const NoSpec = Spu.isNoSpec(this.properties.spu)
-      if(NoSpec){
-        const sku = this.properties.spu.sku_list[0]
-        this.setOutOfStock(sku.stock,count)
+    },
+    // 购买与规格商品
+    shopingHasSpec() {
+      if (!this.data.isSkuIntact) {
+        const missKeys = this.data.judger.getMissingKeys()
+        wx.showToast({
+          title: `请选择${missKeys.join(',')}`,
+          icon: 'none',
+          duration: 3000,
+        })
         return
       }
-      if(this.data.judger.SkuPending.isIntact()){
-        this.setOutOfStock(this.data.judger.getDetermineSku().stock,count)
+      this.triggerSpuEvent(this.data.judger.getDetermineSku())
+    },
+
+    // 判断是否无货 监听数量选择
+    onTapcount(e) {
+      const count = e.detail.count
+      this.setData({
+        count,
+      })
+      const NoSpec = Spu.isNoSpec(this.properties.spu)
+      if (NoSpec) {
+        const sku = this.properties.spu.sku_list[0]
+        this.setOutOfStock(sku.stock, count)
+        return
+      }
+      if (this.data.judger.SkuPending.isIntact()) {
+        this.setOutOfStock(this.data.judger.getDetermineSku().stock, count)
       }
     },
     isoutOfStock(stock, count) {
       return stock < count
     },
-    setOutOfStock(stock,count){
+    setOutOfStock(stock, count) {
       this.setData({
-        outStock:this.isoutOfStock(stock,count)
+        outStock: this.isoutOfStock(stock, count),
       })
-
     },
     // 无规格
     processNoSpec(spu) {
@@ -127,7 +125,7 @@ shopingHasSpec(){
       })
       // 无规格情况下只有一个sku
       this.bindSku(spu.sku_list[0])
-      this.setOutOfStock(spu.sku_list[0].stock,this.data.count)
+      this.setOutOfStock(spu.sku_list[0].stock, this.data.count)
       return
     },
     // 有规格
@@ -141,7 +139,7 @@ shopingHasSpec(){
       if (defaultSku) {
         this.bindSku(defaultSku)
         this.bindTipData()
-        this.setOutOfStock(defaultSku.stock,this.data.count)
+        this.setOutOfStock(defaultSku.stock, this.data.count)
       } else {
         this.bindSpu()
         this.bindTipData()
@@ -197,12 +195,19 @@ shopingHasSpec(){
       if (SkuIntact) {
         const currentSku = judger.getDetermineSku()
         this.bindSku(currentSku)
-        this.setOutOfStock(currentSku.stock,this.data.count)
+        this.setOutOfStock(currentSku.stock, this.data.count)
       }
       this.bindTipData()
       // 重新渲染数据
       this.getFences(judger.fenceGroup)
       this.triggerSpec()
+    },
+    previewImage(event) {
+      const image = event.currentTarget.dataset.img
+      wx.previewImage({
+        current: image, // 当前显示图片的http链接
+        urls: [image], // 需要预览的图片http链接列表
+      })
     },
   },
 })

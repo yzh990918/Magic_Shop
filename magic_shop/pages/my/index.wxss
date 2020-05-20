@@ -37,3 +37,46 @@
   padding-right: 40rpx!important;
 }
 
+.dialog-title{
+  font-size: 24rpx!important;
+  color: #157658!important;
+}
+.dialog-confirm{
+  color: #157658!important;
+}
+.dialog-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #333333;
+}
+.confirm-img{
+  width: 400rpx;
+  margin: 0 auto;
+  height: 200rpx;
+  display: flex;
+  margin-bottom: 30rpx;
+}
+.dialog-content text{
+  display: flex;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  align-items: center;
+  margin-left: 20rpx;
+}
+.bottom-img{
+
+  margin-top: 20rpx;
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-bottom{
+  width: 400rpx;
+  height: 180rpx;
+  display: flex;
+}
+
+

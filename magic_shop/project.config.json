@@ -106,9 +106,16 @@
 					"scene": null
 				},
 				{
+					"id": 7,
+					"name": "pages/donate/index",
+					"pathName": "pages/donate/index",
+					"query": "",
+					"scene": null
+				},
+				{
 					"id": -1,
-					"name": "我的订单",
-					"pathName": "pages/my-order/index",
+					"name": "关于",
+					"pathName": "pages/about/index",
 					"query": "",
 					"scene": null
 				}

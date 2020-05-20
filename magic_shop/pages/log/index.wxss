@@ -1,1 +1,25 @@
 /* pages/log/index.wxss */
+.container{
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.describe-container {
+  width: 590rpx;
+  height: 220rpx;
+  margin-top: 10rpx;
+  line-height: 30rpx;
+  color: #666;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20rpx;
+  font-size: 26rpx;
+  box-shadow: 0px 3px 8px 0px rgba(154, 172, 193, 0.5);
+
+}
+.describe-container text{
+  color: #157658;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}

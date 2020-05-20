@@ -1,20 +1,10 @@
-// pages/about/index.js
+// pages/donate/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    clipborardData:[
-      "https://github.com/251205668",
-      "Ynulinulizainuli0918",
-      "悦读ECUT(东理悦读)",
-      "http://music.yangxiansheng.top/#/recommend",
-      "http://restaurant.yangxiansheng.top",
-      "https://github.com/251205668/Node_review",
-      "https://github.com/251205668/Koa-template",
-      "https://blog.yangxiansheng.top/"
-    ]
 
   },
 
@@ -24,12 +14,11 @@ Page({
   onLoad: function (options) {
 
   },
-  onCopyGit(event){
-    const index = event.currentTarget.dataset.index
-    wx.setClipboardData({
-      data: this.data.clipborardData[index]
-  })
-
+  previewImage(){
+    wx.previewImage({
+      current: 'https://image.yangxiansheng.top/img/E4EF0E6E412D889D0E236038AEECB428.png?imagelist', // 当前显示图片的http链接
+      urls:['https://image.yangxiansheng.top/img/E4EF0E6E412D889D0E236038AEECB428.png?imagelist'] // 需要预览的图片http链接列表
+    })
   },
 
   /**

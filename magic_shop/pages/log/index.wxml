@@ -1,2 +1,33 @@
-<!--pages/log/index.wxml-->
-<text>pages/log/index.wxml</text>
+<view class="container">
+
+<l-steps dot="{{true}}"  color="#157658" direction="column" active-index="0">
+  <l-step title="2020年5月20日">
+    <view class="describe-container" slot="describe">
+     <text>feat:解决部分bug,解忧杂货店小程序部分基本上开发完成🎉🎉</text>
+    </view>
+  </l-step>
+    <l-step title="2020年5月19日">
+    <view class="describe-container" slot="describe">
+      feat: 完成tab组件封装，完成个人订单，个人优惠券页面🎒🎒
+    </view>
+  </l-step>
+    <l-step title="2020年5月18日">
+    <view class="describe-container" slot="describe">
+      feat: 五个专题页面完成。解决单个商品跳转订单问题🎆🎆
+    </view>
+  </l-step>
+ 
+  <l-step title="2020年5月17日 12:30">
+    <view class="describe-container" slot="describe">
+      feat: 订单选择优惠券基本完成，订单商品列表，订单优惠券选择器组件逻辑完成🎅🎅
+    </view>
+  </l-step>
+  <l-step title="2020年5月16日 11:30">
+    <view class="describe-container" slot="describe">
+      feat：优惠券页面逻辑样式完成，完成对优惠券的领取,完成统一的请求封装，处理异常，校验token🎃🎃
+    </view>
+  </l-step>
+  
+</l-steps>
+
+</view>

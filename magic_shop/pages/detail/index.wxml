@@ -3,7 +3,7 @@
   <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}" class="swiper" circular="{{true}}">
     <block wx:for="{{spu.spu_img_list}}" wx:key="{{index}}">
       <swiper-item>
-        <image mode="scaleToFill" class="swiper-image" src="{{item.img}}" />
+        <image data-cursrc="{{item.img}}"  bind:tap="previewImage" mode="scaleToFill" class="swiper-image" src="{{item.img}}" />
       </swiper-item>
     </block>
   </swiper>

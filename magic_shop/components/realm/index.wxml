@@ -4,7 +4,7 @@
 <view class="inner-container">
   <view class="blurb">
     <view class="img-wrapper">
-      <image class="img" src="{{img}}" />
+      <image bind:tap="previewImage" data-img="{{img}}" class="img" src="{{img}}" />
     </view>
     <view class="info">
       <view class="title">{{title}}</view>

@@ -41,11 +41,12 @@ Component({
       }
       return randomArray
     },
+    GotoDetail(event){
+      const pid = event.currentTarget.dataset.pid
+      wx.navigateTo({
+        url: `/pages/detail/index?pid=${pid}`
+      })
+    }
   },
-  GotoDetail(event){
-    const pid = event.currentTarget.dataset.pid
-    wx.navigateTo({
-      url: `/pages/detail/index?pid=${pid}`
-    })
-  }
+  
 })

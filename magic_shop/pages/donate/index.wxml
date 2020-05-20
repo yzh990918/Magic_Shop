@@ -1,0 +1,3 @@
+<view class="container">
+  <image class="img" bind:tap="previewImage" src="https://image.yangxiansheng.top/img/E4EF0E6E412D889D0E236038AEECB428.png?imagelist" />
+</view>

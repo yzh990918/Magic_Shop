@@ -17,4 +17,17 @@
     </l-button>
   </view>
 <l-dialog content-color="#333333" confirm-color="#157658" title-color="#157658" bind:linconfirm="onDialogConfirm" show="{{showDialog}}" content="《解忧杂货店》请求获取您的收货地址" title="授权"></l-dialog>
+
+<l-dialog type="alert" title="提示" l-title-class="dialog-title" show="{{showNotice}}" l-confirm-class="dialog-confirm">
+    <view class="dialog-content">
+      <image class="confirm-img" src="https://image.yangxiansheng.top/img/undraw_business_shop_qw5t.png?imagelist" />
+      <text>
+        后续我们将使用websocket进行开发,即时消息提醒功能将上线
+      </text>
+    </view>
+</l-dialog>
+
+<view class="bottom-img">
+  <image src="https://image.yangxiansheng.top/img/20200520213602(已去底).png?imagelist" class="img-bottom" />
+</view>
 </view>

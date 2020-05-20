@@ -1,2 +1,162 @@
-<!--pages/about/index.wxml-->
-<text>pages/about/index.wxml</text>
+<view class="container">
+  <view class="about-project">
+    <image src="https://image.yangxiansheng.top/img/20200520153246.png?imagelist" class="top-img" />
+    <view class="desc">
+      <view class="inner">
+        <view class="author">
+          <text class="left">作者:</text>
+          <text class="right">努力中的杨先生</text>
+        </view>
+        <view class="design">
+          <text class="left">设计:</text>
+          <text class="right">林间有风团队</text>
+        </view>
+        <view class="thanks">
+          <text class="left">致谢:</text>
+          <text class="right">自己这几个月的努力,项目组后端</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="author-desc">
+    <view class="top">
+       <view class="avatar-wrapper">
+      <l-avatar l-text-class="text" text="杨先生" placement="bottom" shape="square" l-class="avatar" size="120" src="https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif" />
+    </view>
+    <view class="info">
+      <text class="role">半全栈开发(主攻前端开发)</text>
+      <text class="skill">
+        熟练前端工程化webpack打包工具,ES6,js进化中,vue全家桶,小程序,Node.js开发业务不复杂的后端API,热爱在Github上开源自己的项目,可以熟练使用所学技能处理常见业务。
+      </text>
+    </view>
+    </view>
+    <view class="bottom">
+      <view class="next3">
+        <view class="one-row">
+          <view class="left-side">
+            <text>Github地址</text>
+            <text>https://github.com/251205668</text>
+          </view>
+          <view class="right-side">
+            <view data-index="0" bind:tap="onCopyGit" class="btn">
+              <text>复</text>
+              <text>制</text>
+            </view>
+          </view>
+        </view>
+        <view class="one-row">
+          <view class="left-side">
+            <text>合作微信</text>
+            <text>Ynulinulizainuli0918</text>
+          </view>
+          <view class="right-side">
+            <view data-index="1" bind:tap="onCopyGit" class="btn">
+              <text>复</text>
+              <text>制</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="author-project">
+    <view class="title">个人项目</view>
+    <l-card image-mode="widthFix" l-title-class="card-title"  l-class="card" type="cover" image="https://image.yangxiansheng.top/img/undraw_book_lover_mkck.png?imagelist" title="东理悦读">
+      <view class="content">
+        该项目是结合类vue框架mpvue和vue2.6开发的一款校园书城小程序，包含阅读器,书城,音乐播放器等,后续我还将会开发出一套后台管理系统控制数据库书籍,后端是采用springboot开发的restfulAPI,该小程序的亮点是能够在阅读书籍的同时享受音乐的盛典。
+      </view>
+          <view class="one-row">
+          <view class="left-side">
+            <text>小程序名称</text>
+            <text>悦读ECUT(东理悦读)</text>
+          </view>
+          <view class="right-side">
+            <view data-index="2" bind:tap="onCopyGit" class="btn">
+              <text>复</text>
+              <text>制</text>
+            </view>
+          </view>
+        </view>
+    </l-card>
+     <l-card image-mode="widthFix" l-title-class="card-title" l-class="card" type="cover" image="https://image.yangxiansheng.top/img/undraw_compose_music_ovo2.png?imagelist" title="魔法音乐webapp">
+      <view class="content">
+        该项目是采用vue2.6全家桶,结合组件化思想,axios,vuex,ES6,better-scroll,等前端领域先进技术开发的一款仿网易云音乐app,该项目是我一年前学习vue2.6后的学习成果，项目的后端采用的是binaryify大佬开源的网易云API。
+      </view>
+          <view class="one-row">
+          <view class="left-side">
+            <text>项目体验地址</text>
+            <text>http://music.yangxiansheng.top/#/recommend</text>
+          </view>
+          <view class="right-side">
+            <view data-index="3" bind:tap="onCopyGit" class="btn">
+              <text>复</text>
+              <text>制</text>
+            </view>
+          </view>
+        </view>
+    </l-card>
+     <l-card image-mode="widthFix" l-title-class="card-title" l-class="card" type="cover" image="https://image.yangxiansheng.top/img/undraw_Hamburger_8ge6.png?imagelist" title="点餐外卖webapp">
+      <view class="content">
+        该项目采用vue2.6开发,是我初识vue，在学习课程时开发的一款外卖点餐APP,该项目比较基础,但是麻雀虽小,五张俱全,涵盖vue基础知识点,其中有几个动画设计巧妙，值得深究学习。
+      </view>
+          <view class="one-row">
+          <view class="left-side">
+            <text>项目体验地址</text>
+            <text>http://restaurant.yangxiansheng.top</text>
+          </view>
+          <view class="right-side">
+            <view data-index="4" bind:tap="onCopyGit" class="btn">
+              <text>复</text>
+              <text>制</text>
+            </view>
+          </view>
+        </view>
+    </l-card>
+     <l-card image-mode="widthFix" l-title-class="card-title" l-class="card" type="cover" image="https://image.yangxiansheng.top/img/undraw_insert_block_efyb.png?imagelist" title="Node.js开发Restful API">
+      <view class="content">
+        该项目采用Node.js中的Koa框架开发，数据库采用的是sequelize这一ORM框架,包含了30多个restful风格的接口开发,通过对Koa的学习,使用验证器等库,我又封装出了一个Koa开发API的间接模板。
+      </view>
+          <view class="one-row">
+          <view class="left-side">
+            <text>项目地址</text>
+            <text>https://github.com/251205668/Node_review</text>
+          </view>
+          <view class="right-side">
+            <view data-index="5" bind:tap="onCopyGit" class="btn">
+              <text>复</text>
+              <text>制</text>
+            </view>
+          </view>
+        </view>
+         <view class="one-row">
+          <view class="left-side">
+            <text>Koa封装的开发模板</text>
+            <text>https://github.com/251205668/Koa-template</text>
+          </view>
+          <view class="right-side">
+            <view data-index="6"  bind:tap="onCopyGit" class="btn">
+              <text>复</text>
+              <text>制</text>
+            </view>
+          </view>
+        </view>
+    </l-card>
+     <l-card image-mode="widthFix"  l-title-class="card-title" l-class="card" type="cover" image="https://image.yangxiansheng.top/img/undraw_publish_article_icso.png?imagelist" title="个人面试总结以及个人博客">
+      <view class="content">
+        由于业务总是开发不完的,正值大三下学期,这个项目是利用vuepress搭建的文档网站,用于记录自己之前学习的点点滴滴，并记录重要的面试题记，和心得体会。
+      </view>
+          <view class="one-row">
+          <view class="left-side">
+            <text>个人博客</text>
+            <text>https://blog.yangxiansheng.top/</text>
+          </view>
+          <view class="right-side">
+            <view data-index="7" bind:tap="onCopyGit" class="btn">
+              <text>复</text>
+              <text>制</text>
+            </view>
+          </view>
+        </view>
+    </l-card>
+  </view>
+</view>

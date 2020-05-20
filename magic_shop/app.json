@@ -14,7 +14,8 @@
     "pages/my-order/index",
     "pages/my-coupon/index",
     "pages/log/index",
-    "pages/notice/index"
+    "pages/notice/index",
+    "pages/donate/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -64,8 +65,10 @@
     "s-theme-E": "/components/theme-E/index",
     "l-skeleton": "/miniprogram_npm/lin-ui/skeleton/index",
     "l-tabs": "/miniprogram_npm/lin-ui/tabs/index",
-    "l-tabpanel": "/miniprogram_npm/lin-ui/tabpanel/index"
-   
+    "l-tabpanel": "/miniprogram_npm/lin-ui/tabpanel/index",
+    "l-card": "/miniprogram_npm/lin-ui/card/index",
+    "l-steps":"/miniprogram_npm/lin-ui/steps/index",
+    "l-step":"/miniprogram_npm/lin-ui/step/index"
   },
   "tabBar": {
     "borderStyle": "black",

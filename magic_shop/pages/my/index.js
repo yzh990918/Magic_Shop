@@ -11,7 +11,8 @@ Page({
    */
   data: {
     couponsNums:0,
-    showDialog:false
+    showDialog:false,
+    showNotice:false
   },
 
   /**
@@ -53,17 +54,35 @@ Page({
     })
 
   },
+  toLog(){
+    wx.navigateTo({
+      url: '/pages/log/index'
+    })
+
+  },
+  toDonate(){
+    wx.navigateTo({
+      url: '/pages/donate/index'
+    })
+    
+  },
 
   toOrderDetail(){
     wx.navigateTo({
       url: '/pages/my-order/index?key=0'
     })
   },
+  toNotice(){
+    this.setData({
+      showNotice:true
+    })
+
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+   
   },
 
   /**
