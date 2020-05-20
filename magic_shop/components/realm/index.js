@@ -95,15 +95,21 @@ shopingHasSpec(){
 },
 
 
-    // 判断是否无货
+    // 判断是否无货 监听数量选择
     onTapcount(e){
       const count = e.detail.count
-      if(this.data.judger.SkuPending.isIntact()){
-        this.setOutOfStock(this.data.judger.getDetermineSku().stock,count)
-      }
       this.setData({
         count
       })
+      const NoSpec = Spu.isNoSpec(this.properties.spu)
+      if(NoSpec){
+        const sku = this.properties.spu.sku_list[0]
+        this.setOutOfStock(sku.stock,count)
+        return
+      }
+      if(this.data.judger.SkuPending.isIntact()){
+        this.setOutOfStock(this.data.judger.getDetermineSku().stock,count)
+      }
     },
     isoutOfStock(stock, count) {
       return stock < count

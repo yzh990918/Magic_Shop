@@ -3,7 +3,7 @@
   <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}" class="swiper" circular="{{true}}">
     <block wx:for="{{spu.spu_img_list}}" wx:key="{{index}}">
       <swiper-item>
-        <image mode="aspectFill" class="swiper-image" src="{{item.img}}" />
+        <image mode="scaleToFill" class="swiper-image" src="{{item.img}}" />
       </swiper-item>
     </block>
   </swiper>
@@ -45,7 +45,7 @@
  <s-instruction instaruction="{{instaruction}}" ></s-instruction>
  <view wx:if="{{spu.spu_detail_img_list}}" class="detail-imgs">
    <block wx:for="{{spu.spu_detail_img_list}}" wx:key="{{index}}">
-     <image class="detail-img" mode="widthFix" src="{{item.img}}" />
+     <image style="display:flex" class="detail-img" mode="widthFix" src="{{item.img}}" />
    </block>
  </view>
 </scroll-view>

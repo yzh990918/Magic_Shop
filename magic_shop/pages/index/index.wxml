@@ -4,7 +4,7 @@
     <swiper class="swiper" circular="{{true}}" indicator-active-color="#157658" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}">
       <block wx:for="{{banner.items}}" wx:key="{{index}}" :key="{{index}}">
         <swiper-item>
-          <image data-type="{{item.type}}" data-keyword="{{item.keyword}}" bind:tap="onGotoBanner" class="swiper" src="{{item.img}}" />
+          <image  data-type="{{item.type}}" data-keyword="{{item.keyword}}" bind:tap="onGotoBanner" class="swiper" src="{{item.img}}" />
         </swiper-item>
       </block>
     </swiper>
