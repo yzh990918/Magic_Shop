@@ -56,7 +56,7 @@
 
 ## 运行效果图
 
-首页
+[首页](https://image.yangxiansheng.top/img/首页图.gif?imagelist)
 
 ![](https://image.yangxiansheng.top/img/首页图.gif?imagelist)
 
@@ -114,6 +114,8 @@
 
 
 ## 项目架构图
+
+github吞图？ [查看完整功能图](https://image.yangxiansheng.top/img/20200521125309.png?imagelist))
 
 ![](https://image.yangxiansheng.top/img/20200521125309.png?imagelist)
 
