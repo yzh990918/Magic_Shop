@@ -30,6 +30,7 @@ class matrix {
         desArray[j][i] = this.m[i][j]
       }
     }
+    console.log(desArray)
     return desArray
   }
 }
